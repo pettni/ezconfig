@@ -1,0 +1,71 @@
+Language: Cpp
+Standard: c++20
+UseTab: Never
+
+IndentWidth: 2
+ContinuationIndentWidth: 2
+
+AlignAfterOpenBracket: AlwaysBreak
+# AlignArrayOfStructures: None
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: false
+AlignEscapedNewlines: Left
+AlignOperands: AlignAfterOperator
+AlignTrailingComments: true
+
+AllowShortBlocksOnASingleLine: true
+AllowShortEnumsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortLambdasOnASingleLine: All
+AllowShortLoopsOnASingleLine: true
+
+AlwaysBreakTemplateDeclarations: Yes
+
+BinPackArguments: false
+BinPackParameters: false
+
+BreakBeforeBraces: Custom
+BraceWrapping:
+    AfterCaseLabel: false
+    AfterClass: true
+    AfterEnum: false
+    AfterFunction: true
+    AfterNamespace: false
+    AfterStruct: true
+    BeforeElse: false
+    SplitEmptyFunction: false
+    SplitEmptyRecord: false
+    SplitEmptyNamespace: false
+
+BreakBeforeBinaryOperators: NonAssignment
+BreakBeforeConceptDeclarations: true
+BreakConstructorInitializers: BeforeColon
+BreakInheritanceList: BeforeColon
+
+EmptyLineBeforeAccessModifier: Always
+
+FixNamespaceComments: true
+
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex:     '^<[a-z_]*>$'   # system headers
+    Priority:  1
+  - Regex:     '^<.*>'         # third-party headers
+    Priority:  2
+  - Regex:     '".*"'          # local headers
+    Priority:  3
+
+IndentCaseLabels: false
+IndentRequires: true
+
+InsertTrailingCommas: Wrapped
+
+ColumnLimit: 120
+
+SortUsingDeclarations: true
+SortIncludes: true
+
+SpaceAfterTemplateKeyword: false
+SpacesBeforeTrailingComments: 2
+PointerAlignment: Middle
