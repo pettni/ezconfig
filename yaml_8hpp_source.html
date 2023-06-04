@@ -135,7 +135,7 @@ $(function() {
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="yaml_8hpp.html#a265b5a7b310ee0fc92d4c2a91a5d69d4">  111</a></span><span class="preprocessor">#define EZ_YAML_CREATE(Base, y) ezconfig::YamlFactory&lt;Base&gt;::Create(y)</span></div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Base&gt;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="structYAML_1_1convert_3_01std_1_1shared__ptr_3_01Base_01_4_01_4.html">  117</a></span><span class="keyword">struct </span>YAML::convert&lt;std::shared_ptr&lt;Base&gt;&gt;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="structYAML_1_1convert_3_01std_1_1shared__ptr_3_01Base_01_4_01_4.html">  117</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structYAML_1_1convert.html">YAML::convert</a>&lt;std::shared_ptr&lt;Base&gt;&gt;</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>{</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> YAML::Node &amp; y, std::shared_ptr&lt;Base&gt; &amp; ptr)</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  {</div>
@@ -145,7 +145,7 @@ $(function() {
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>};</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Base&gt;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="structYAML_1_1convert_3_01std_1_1unique__ptr_3_01Base_01_4_01_4.html">  130</a></span><span class="keyword">struct </span>YAML::convert&lt;std::unique_ptr&lt;Base&gt;&gt;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="structYAML_1_1convert_3_01std_1_1unique__ptr_3_01Base_01_4_01_4.html">  130</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structYAML_1_1convert.html">YAML::convert</a>&lt;std::unique_ptr&lt;Base&gt;&gt;</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>{</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> YAML::Node &amp; y, std::unique_ptr&lt;Base&gt; &amp; ptr)</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  {</div>
@@ -160,6 +160,7 @@ $(function() {
 <div class="ttc" id="aclassezconfig_1_1YamlFactory_html_a3be6d5e24cf741ca5b32e38a59c78c9d"><div class="ttname"><a href="classezconfig_1_1YamlFactory.html#a3be6d5e24cf741ca5b32e38a59c78c9d">ezconfig::YamlFactory::Register</a></div><div class="ttdeci">static void Register(const std::string &amp;tag)</div><div class="ttdoc">Register a factory method.</div><div class="ttdef"><b>Definition:</b> <a href="yaml_8hpp_source.html#l00053">yaml.hpp:53</a></div></div>
 <div class="ttc" id="aclassezconfig_1_1YamlFactory_html_afef317681231d103b0f08d1753e9c40b"><div class="ttname"><a href="classezconfig_1_1YamlFactory.html#afef317681231d103b0f08d1753e9c40b">ezconfig::YamlFactory::Create</a></div><div class="ttdeci">static std::unique_ptr&lt; Base &gt; Create(YamlArg y)</div><div class="ttdoc">Create an object from yaml.</div><div class="ttdef"><b>Definition:</b> <a href="yaml_8hpp_source.html#l00063">yaml.hpp:63</a></div></div>
 <div class="ttc" id="afactory_8hpp_html"><div class="ttname"><a href="factory_8hpp.html">factory.hpp</a></div><div class="ttdoc">Factory base class.</div></div>
+<div class="ttc" id="astructYAML_1_1convert_html"><div class="ttname"><a href="structYAML_1_1convert.html">YAML::convert</a></div><div class="ttdef"><b>Definition:</b> <a href="eigen__fwd_8hpp_source.html#l00012">eigen_fwd.hpp:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

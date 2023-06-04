@@ -133,7 +133,7 @@ Register yaml converter</h2>
 <div class="line"><span class="comment">// make Config struct parse-able from json</span></div>
 <div class="line"><span class="comment">// this can be automated with boost::hana</span></div>
 <div class="line"><span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><span class="keyword">struct </span>YAML::convert&lt;MyDerived::Config&gt;</div>
+<div class="line"><span class="keyword">struct </span><a class="code hl_struct" href="structYAML_1_1convert.html">YAML::convert</a>&lt;MyDerived::Config&gt;</div>
 <div class="line">{</div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> YAML::Node &amp; yaml, MyDerived::Config &amp; obj)</div>
 <div class="line">  {</div>
@@ -145,6 +145,7 @@ Register yaml converter</h2>
 <div class="line"> </div>
 <div class="line"><span class="comment">// register a factory method with a tag via MyDerived::Config</span></div>
 <div class="line"><a class="code hl_define" href="yaml_8hpp.html#a077386cd667825e1df2a05f1c4e4c14a">EZ_YAML_REGISTER</a>(MyBase, <span class="stringliteral">&quot;!mytag&quot;</span>, MyDerived, MyDerived::Config);</div>
+<div class="ttc" id="astructYAML_1_1convert_html"><div class="ttname"><a href="structYAML_1_1convert.html">YAML::convert</a></div><div class="ttdef"><b>Definition:</b> <a href="eigen__fwd_8hpp_source.html#l00012">eigen_fwd.hpp:12</a></div></div>
 <div class="ttc" id="ayaml_8hpp_html"><div class="ttname"><a href="yaml_8hpp.html">yaml.hpp</a></div><div class="ttdoc">Yaml factory.</div></div>
 <div class="ttc" id="ayaml_8hpp_html_a077386cd667825e1df2a05f1c4e4c14a"><div class="ttname"><a href="yaml_8hpp.html#a077386cd667825e1df2a05f1c4e4c14a">EZ_YAML_REGISTER</a></div><div class="ttdeci">#define EZ_YAML_REGISTER(Base, tag, Derived,...)</div><div class="ttdoc">Register a tagged conversion with a yaml factory.</div><div class="ttdef"><b>Definition:</b> <a href="yaml_8hpp_source.html#l00098">yaml.hpp:98</a></div></div>
 <div class="ttc" id="ayaml_8hpp_html_a697e0ed10b585a1cfdb27a03c1df555e"><div class="ttname"><a href="yaml_8hpp.html#a697e0ed10b585a1cfdb27a03c1df555e">EZ_YAML_DECLARE</a></div><div class="ttdeci">#define EZ_YAML_DECLARE(Base)</div><div class="ttdoc">Declare a yaml factory for a base class.</div><div class="ttdef"><b>Definition:</b> <a href="yaml_8hpp_source.html#l00080">yaml.hpp:80</a></div></div>
@@ -172,7 +173,10 @@ Register json converter</h2>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
 TODOs</h1>
 <ul>
-<li>Add missing yaml and json conversions, including from boost::hana structs. </li>
+<li>[x] Extra yaml types decode</li>
+<li>[ ] Extra yaml types encode</li>
+<li>[ ] Extra json types decode</li>
+<li>[ ] Extra json types encode </li>
 </ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
