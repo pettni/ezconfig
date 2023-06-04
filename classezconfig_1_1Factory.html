@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ezconfig: factory::Factory&lt; Base, Args &gt; Class Template Reference</title>
+<title>ezconfig: ezconfig::Factory&lt; Base, Args &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -77,34 +77,34 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>factory</b></li><li class="navelem"><a class="el" href="classfactory_1_1Factory.html">Factory</a></li>  </ul>
+<li class="navelem"><b>ezconfig</b></li><li class="navelem"><a class="el" href="classezconfig_1_1Factory.html">Factory</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="classfactory_1_1Factory-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">factory::Factory&lt; Base, Args &gt; Class Template Reference</div></div>
+<a href="classezconfig_1_1Factory-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">ezconfig::Factory&lt; Base, Args &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>A <a class="el" href="classfactory_1_1Factory.html" title="A Factory creates objects in a class hierarchy.">Factory</a> creates objects in a class hierarchy.  
- <a href="classfactory_1_1Factory.html#details">More...</a></p>
+<p>A <a class="el" href="classezconfig_1_1Factory.html" title="A Factory creates objects in a class hierarchy.">Factory</a> creates objects in a class hierarchy.  
+ <a href="classezconfig_1_1Factory.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="factory_8hpp_source.html">factory.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a05a66767e4145e323b47cb981f288be7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfactory_1_1Factory.html#a05a66767e4145e323b47cb981f288be7">Register</a> (const std::string &amp;tag, std::function&lt; std::unique_ptr&lt; Base &gt;(Args...)&gt; factory)</td></tr>
-<tr class="memdesc:a05a66767e4145e323b47cb981f288be7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factory method to the registry.  <a href="classfactory_1_1Factory.html#a05a66767e4145e323b47cb981f288be7">More...</a><br /></td></tr>
-<tr class="separator:a05a66767e4145e323b47cb981f288be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad87431d62a4a951b0d98fa31065f305c"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; Base &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfactory_1_1Factory.html#ad87431d62a4a951b0d98fa31065f305c">Create</a> (const std::string &amp;tag, auto &amp;&amp;... args)</td></tr>
-<tr class="memdesc:ad87431d62a4a951b0d98fa31065f305c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an object.  <a href="classfactory_1_1Factory.html#ad87431d62a4a951b0d98fa31065f305c">More...</a><br /></td></tr>
-<tr class="separator:ad87431d62a4a951b0d98fa31065f305c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0e58523c9aa7bf1621d1347226225d4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezconfig_1_1Factory.html#ab0e58523c9aa7bf1621d1347226225d4">Register</a> (const std::string &amp;tag, std::function&lt; std::unique_ptr&lt; Base &gt;(Args...)&gt; factory)</td></tr>
+<tr class="memdesc:ab0e58523c9aa7bf1621d1347226225d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factory method to the registry.  <a href="classezconfig_1_1Factory.html#ab0e58523c9aa7bf1621d1347226225d4">More...</a><br /></td></tr>
+<tr class="separator:ab0e58523c9aa7bf1621d1347226225d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fd416c95f60ed8671386ee02e83d032"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; Base &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezconfig_1_1Factory.html#a0fd416c95f60ed8671386ee02e83d032">Create</a> (const std::string &amp;tag, auto &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a0fd416c95f60ed8671386ee02e83d032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an object.  <a href="classezconfig_1_1Factory.html#a0fd416c95f60ed8671386ee02e83d032">More...</a><br /></td></tr>
+<tr class="separator:a0fd416c95f60ed8671386ee02e83d032"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Base, typename... Args&gt;<br />
-class factory::Factory&lt; Base, Args &gt;</div><p >A <a class="el" href="classfactory_1_1Factory.html" title="A Factory creates objects in a class hierarchy.">Factory</a> creates objects in a class hierarchy. </p>
+class ezconfig::Factory&lt; Base, Args &gt;</div><p >A <a class="el" href="classezconfig_1_1Factory.html" title="A Factory creates objects in a class hierarchy.">Factory</a> creates objects in a class hierarchy. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Signature</td><td>type signature Base(Args...) where Base is the hierarchy base class, and Args... are the inputs to the factory methods. </td></tr>
@@ -114,8 +114,8 @@ class factory::Factory&lt; Base, Args &gt;</div><p >A <a class="el" href="classf
 
 <p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00018">18</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad87431d62a4a951b0d98fa31065f305c" name="ad87431d62a4a951b0d98fa31065f305c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad87431d62a4a951b0d98fa31065f305c">&#9670;&#160;</a></span>Create()</h2>
+<a id="a0fd416c95f60ed8671386ee02e83d032" name="a0fd416c95f60ed8671386ee02e83d032"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fd416c95f60ed8671386ee02e83d032">&#9670;&#160;</a></span>Create()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -126,7 +126,7 @@ template&lt;typename Base , typename... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; Base &gt; <a class="el" href="classfactory_1_1Factory.html">factory::Factory</a>&lt; Base, Args &gt;::Create </td>
+          <td class="memname">std::unique_ptr&lt; Base &gt; <a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory</a>&lt; Base, Args &gt;::Create </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>tag</em>, </td>
@@ -156,8 +156,8 @@ template&lt;typename Base , typename... Args&gt; </div>
 
 </div>
 </div>
-<a id="a05a66767e4145e323b47cb981f288be7" name="a05a66767e4145e323b47cb981f288be7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05a66767e4145e323b47cb981f288be7">&#9670;&#160;</a></span>Register()</h2>
+<a id="ab0e58523c9aa7bf1621d1347226225d4" name="ab0e58523c9aa7bf1621d1347226225d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0e58523c9aa7bf1621d1347226225d4">&#9670;&#160;</a></span>Register()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,7 +168,7 @@ template&lt;typename Base , typename... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classfactory_1_1Factory.html">factory::Factory</a>&lt; Base, Args &gt;::Register </td>
+          <td class="memname">void <a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory</a>&lt; Base, Args &gt;::Register </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>tag</em>, </td>

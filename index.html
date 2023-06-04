@@ -81,6 +81,11 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p ><a class="anchor" id="md_README"></a> <a href="https://github.com/pettni/ezconfig/actions/workflows/build_and_test.yml"><img src="https://img.shields.io/github/actions/workflow/status/pettni/ezconfig/build_and_test.yml?style=flat-square" alt="CI Build and Test" class="inline"/></a> <a href="https://github.com/pettni/ezconfig/blob/master/LICENSE"><img src="https://img.shields.io/github/license/pettni/ezconfig.svg?style=flat-square" alt="License" style="pointer-events: none;" class="inline"/></a></p>
+<ul>
+<li>Small header-only library for creating objects from dynamic json or yaml data.</li>
+<li>Uses <a href="https://github.com/nlohmann/json">nlohmann_json</a> and <a href="https://github.com/jbeder/yaml-cpp">yaml-cpp</a> for parsing.</li>
+<li><a href="https://pettni.github.io/ezconfig">Documentation</a>.</li>
+</ul>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Examples</h1>
 <p >Suppose we have a class hierarchy with members that need to be instantiated from config files or some other dynamic data. </p><div class="fragment"><div class="line"><span class="keyword">struct </span>MyBase</div>
@@ -120,25 +125,7 @@ Examples</h1>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md2"></a>
 Register yaml converter</h2>
 <p >Yaml conversion uses <a href="https://github.com/jbeder/yaml-cpp"><code>yaml-cpp</code></a>.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;yaml-cpp/yaml.h&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// declare factory for hierarchy</span></div>
-<div class="line">EZ_YAML_DECLARE(MyBase);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// make Config struct parse-able from json</span></div>
-<div class="line"><span class="comment">// this can be automated with boost::hana</span></div>
-<div class="line"><span class="keywordtype">void</span> from_json(<span class="keyword">const</span> nlohmann::json &amp; j, MyDerived::Config &amp; p)</div>
-<div class="line">{</div>
-<div class="line">  p.x = j.at(<span class="stringliteral">&quot;x&quot;</span>).get&lt;<span class="keywordtype">int</span>&gt;();</div>
-<div class="line">  p.y = j.at(<span class="stringliteral">&quot;y&quot;</span>).get&lt;<span class="keywordtype">int</span>&gt;();</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// register a factory method with a tag via MyDerived::Config</span></div>
-<div class="line">EZ_JSON_REGISTER(MyBase, <span class="stringliteral">&quot;mytag&quot;</span>, MyDerived, MyDerived::Config);</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
-Register json converter</h2>
-<p >Json conversion uses <a href="https://github.com/nlohmann/json"><code>nlohmann_json</code></a>.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;nlohmann/json&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;ezconfig/yaml.hpp&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// declare factory for hierarchy</span></div>
 <div class="line">EZ_YAML_DECLARE(MyBase);</div>
@@ -158,6 +145,24 @@ Register json converter</h2>
 <div class="line"> </div>
 <div class="line"><span class="comment">// register a factory method with a tag via MyDerived::Config</span></div>
 <div class="line">EZ_YAML_REGISTER(MyBase, <span class="stringliteral">&quot;!mytag&quot;</span>, MyDerived, MyDerived::Config);</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
+Register json converter</h2>
+<p >Json conversion uses <a href="https://github.com/nlohmann/json"><code>nlohmann_json</code></a>.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;ezconfig/json.hpp&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// declare factory for hierarchy</span></div>
+<div class="line">EZ_JSON_DECLARE(MyBase);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// make Config struct parse-able from json</span></div>
+<div class="line"><span class="comment">// this can be automated with boost::hana</span></div>
+<div class="line"><span class="keywordtype">void</span> from_json(<span class="keyword">const</span> nlohmann::json &amp; j, MyDerived::Config &amp; p)</div>
+<div class="line">{</div>
+<div class="line">  p.x = j.at(<span class="stringliteral">&quot;x&quot;</span>).get&lt;<span class="keywordtype">int</span>&gt;();</div>
+<div class="line">  p.y = j.at(<span class="stringliteral">&quot;y&quot;</span>).get&lt;<span class="keywordtype">int</span>&gt;();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// register a factory method with a tag via MyDerived::Config</span></div>
+<div class="line">EZ_JSON_REGISTER(MyBase, <span class="stringliteral">&quot;mytag&quot;</span>, MyDerived, MyDerived::Config);</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
 TODOs</h1>
 <ul>
