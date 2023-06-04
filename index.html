@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ezconfig: ezconfig: Instantiate C++ Objects from json and yaml</title>
+<title>ezconfig: ezconfig: Easy creation of C++ classes from json and yaml</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -77,13 +77,13 @@ $(function() {
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">ezconfig: Instantiate C++ Objects from json and yaml </div></div>
+  <div class="headertitle"><div class="title">ezconfig: Easy creation of C++ classes from json and yaml </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p ><a class="anchor" id="md_README"></a> <a href="https://github.com/pettni/ezconfig/actions/workflows/build_and_test.yml"><img src="https://img.shields.io/github/actions/workflow/status/pettni/ezconfig/build_and_test.yml?style=flat-square" alt="CI Build and Test" class="inline"/></a> <a href="https://github.com/pettni/ezconfig/blob/master/LICENSE"><img src="https://img.shields.io/github/license/pettni/ezconfig.svg?style=flat-square" alt="License" style="pointer-events: none;" class="inline"/></a></p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Examples</h1>
-<p >Suppose we have a class hierarchy. </p><div class="fragment"><div class="line"><span class="keyword">struct </span>MyBase</div>
+<p >Suppose we have a class hierarchy with members that need to be instantiated from config files or some other dynamic data. </p><div class="fragment"><div class="line"><span class="keyword">struct </span>MyBase</div>
 <div class="line">{};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>MyDerived : <span class="keyword">public</span> MyBase</div>
@@ -158,7 +158,12 @@ Register json converter</h2>
 <div class="line"> </div>
 <div class="line"><span class="comment">// register a factory method with a tag via MyDerived::Config</span></div>
 <div class="line">EZ_YAML_REGISTER(MyBase, <span class="stringliteral">&quot;!mytag&quot;</span>, MyDerived, MyDerived::Config);</div>
-</div><!-- fragment --> </div></div><!-- PageDoc -->
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
+TODOs</h1>
+<ul>
+<li>Add missing yaml and json conversions, including from boost::hana structs. </li>
+</ul>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
