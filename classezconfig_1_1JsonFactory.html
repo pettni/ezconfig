@@ -110,11 +110,11 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a404b701128310fe65fb11a4361abb062"><td class="memTemplParams" colspan="2">template&lt;typename Derived , typename Intermediate  = Derived&gt; <br />
-requires (std::is_base_of_v&lt;Base, Derived&gt;)</td></tr>
-<tr class="memitem:a404b701128310fe65fb11a4361abb062"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classezconfig_1_1JsonFactory.html#a404b701128310fe65fb11a4361abb062">Register</a> (const std::string &amp;tag)</td></tr>
-<tr class="memdesc:a404b701128310fe65fb11a4361abb062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a factory method.  <a href="classezconfig_1_1JsonFactory.html#a404b701128310fe65fb11a4361abb062">More...</a><br /></td></tr>
-<tr class="separator:a404b701128310fe65fb11a4361abb062"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6cba8f9616319265849780cd27c3df3"><td class="memTemplParams" colspan="2">template&lt;typename Derived , typename Intermediate  = Derived&gt; <br />
+requires ( std::is_base_of_v&lt;Base, Derived&gt; &amp;&amp; JsonParseable&lt;Intermediate&gt; &amp;&amp; std::is_constructible_v&lt;Derived, Intermediate &amp;&amp;&gt;)</td></tr>
+<tr class="memitem:aa6cba8f9616319265849780cd27c3df3"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classezconfig_1_1JsonFactory.html#aa6cba8f9616319265849780cd27c3df3">Register</a> (const std::string &amp;tag)</td></tr>
+<tr class="memdesc:aa6cba8f9616319265849780cd27c3df3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a factory method.  <a href="classezconfig_1_1JsonFactory.html#aa6cba8f9616319265849780cd27c3df3">More...</a><br /></td></tr>
+<tr class="separator:aa6cba8f9616319265849780cd27c3df3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab37a0777dabf6ec4ee4b6aa551eb5c2a"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; Base &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezconfig_1_1JsonFactory.html#ab37a0777dabf6ec4ee4b6aa551eb5c2a">Create</a> (JsonArg json)</td></tr>
 <tr class="memdesc:ab37a0777dabf6ec4ee4b6aa551eb5c2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an object from json.  <a href="classezconfig_1_1JsonFactory.html#ab37a0777dabf6ec4ee4b6aa551eb5c2a">More...</a><br /></td></tr>
 <tr class="separator:ab37a0777dabf6ec4ee4b6aa551eb5c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,7 +130,7 @@ requires (std::is_base_of_v&lt;Base, Derived&gt;)</td></tr>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Base&gt;<br />
 class ezconfig::JsonFactory&lt; Base &gt;</div><p >A <a class="el" href="classezconfig_1_1JsonFactory.html" title="A JsonFactory creates objects in a class hierarchy from json.">JsonFactory</a> creates objects in a class hierarchy from json. </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00019">19</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00031">31</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aa659ad5acd6a8a89f7f0bd619f91de87" name="aa659ad5acd6a8a89f7f0bd619f91de87"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa659ad5acd6a8a89f7f0bd619f91de87">&#9670;&#160;</a></span>FactoryBase</h2>
@@ -146,7 +146,7 @@ template&lt;typename Base &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00022">22</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00034">34</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
@@ -179,12 +179,12 @@ template&lt;typename Base &gt; </div>
 
 <p>Create an object from json. </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00047">47</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00061">61</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a404b701128310fe65fb11a4361abb062" name="a404b701128310fe65fb11a4361abb062"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a404b701128310fe65fb11a4361abb062">&#9670;&#160;</a></span>Register()</h2>
+<a id="aa6cba8f9616319265849780cd27c3df3" name="aa6cba8f9616319265849780cd27c3df3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6cba8f9616319265849780cd27c3df3">&#9670;&#160;</a></span>Register()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,7 +192,7 @@ template&lt;typename Base &gt; </div>
 template&lt;typename Base &gt; </div>
 <div class="memtemplate">
 template&lt;typename Derived , typename Intermediate  = Derived&gt; <br />
-requires (std::is_base_of_v&lt;Base, Derived&gt;)</div>
+requires ( std::is_base_of_v&lt;Base, Derived&gt; &amp;&amp; JsonParseable&lt;Intermediate&gt; &amp;&amp; std::is_constructible_v&lt;Derived, Intermediate &amp;&amp;&gt;)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -222,7 +222,7 @@ requires (std::is_base_of_v&lt;Base, Derived&gt;)</div>
 </dl>
 <p>Adds conversions from json of the form '{ tag: data }' to Derived, where 'tag' is a string and 'data' can be json-converted to Intermediate. </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00035">35</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00049">49</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>

@@ -6,6 +6,5 @@ var searchData=
   ['ez_5fjson_5fregister_3',['EZ_JSON_REGISTER',['../json_8hpp.html#a45115e4b1d83052e94f26a982e44639a',1,'json.hpp']]],
   ['ez_5fyaml_5fcreate_4',['EZ_YAML_CREATE',['../yaml_8hpp.html#a265b5a7b310ee0fc92d4c2a91a5d69d4',1,'yaml.hpp']]],
   ['ez_5fyaml_5fdeclare_5',['EZ_YAML_DECLARE',['../yaml_8hpp.html#a697e0ed10b585a1cfdb27a03c1df555e',1,'yaml.hpp']]],
-  ['ez_5fyaml_5fregister_6',['EZ_YAML_REGISTER',['../yaml_8hpp.html#a077386cd667825e1df2a05f1c4e4c14a',1,'yaml.hpp']]],
-  ['ezconfig_3a_20easy_20creation_20of_20c_2b_2b_20classes_20from_20json_20and_20yaml_7',['ezconfig: Easy creation of C++ classes from json and yaml',['../index.html',1,'']]]
+  ['ez_5fyaml_5fregister_6',['EZ_YAML_REGISTER',['../yaml_8hpp.html#a077386cd667825e1df2a05f1c4e4c14a',1,'yaml.hpp']]]
 ];

@@ -1,0 +1,6 @@
+<map id="include/ezconfig/factory.hpp" name="include/ezconfig/factory.hpp">
+<area shape="rect" id="node1" title="Factory base class." alt="" coords="87,5,268,31"/>
+<area shape="rect" id="node2" href="$factory__impl_8hpp_source.html" title=" " alt="" coords="5,79,163,119"/>
+<area shape="rect" id="node3" href="$json_8hpp.html" title="Json factory." alt="" coords="187,86,354,111"/>
+<area shape="rect" id="node4" href="$yaml_8hpp.html" title="Yaml factory." alt="" coords="378,86,547,111"/>
+</map>

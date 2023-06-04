@@ -110,14 +110,14 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a056bcb7b5558ff1c502117770e0692e0"><td class="memTemplParams" colspan="2">template&lt;typename Derived , typename Intermediate  = Derived&gt; <br />
-requires (std::is_base_of_v&lt;Base, Derived&gt;)</td></tr>
-<tr class="memitem:a056bcb7b5558ff1c502117770e0692e0"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classezconfig_1_1YamlFactory.html#a056bcb7b5558ff1c502117770e0692e0">Register</a> (const std::string &amp;tag)</td></tr>
-<tr class="memdesc:a056bcb7b5558ff1c502117770e0692e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a factory method.  <a href="classezconfig_1_1YamlFactory.html#a056bcb7b5558ff1c502117770e0692e0">More...</a><br /></td></tr>
-<tr class="separator:a056bcb7b5558ff1c502117770e0692e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f3e8fba2fe36a6a9c85aaba13e272f0"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; Base &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezconfig_1_1YamlFactory.html#a7f3e8fba2fe36a6a9c85aaba13e272f0">Create</a> (YamlArg yaml)</td></tr>
-<tr class="memdesc:a7f3e8fba2fe36a6a9c85aaba13e272f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an object from yaml.  <a href="classezconfig_1_1YamlFactory.html#a7f3e8fba2fe36a6a9c85aaba13e272f0">More...</a><br /></td></tr>
-<tr class="separator:a7f3e8fba2fe36a6a9c85aaba13e272f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3be6d5e24cf741ca5b32e38a59c78c9d"><td class="memTemplParams" colspan="2">template&lt;typename Derived , typename Intermediate  = Derived&gt; <br />
+requires ( std::is_base_of_v&lt;Base, Derived&gt; &amp;&amp; YamlParseable&lt;Intermediate&gt; &amp;&amp; std::is_constructible_v&lt;Derived, Intermediate &amp;&amp;&gt;)</td></tr>
+<tr class="memitem:a3be6d5e24cf741ca5b32e38a59c78c9d"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classezconfig_1_1YamlFactory.html#a3be6d5e24cf741ca5b32e38a59c78c9d">Register</a> (const std::string &amp;tag)</td></tr>
+<tr class="memdesc:a3be6d5e24cf741ca5b32e38a59c78c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a factory method.  <a href="classezconfig_1_1YamlFactory.html#a3be6d5e24cf741ca5b32e38a59c78c9d">More...</a><br /></td></tr>
+<tr class="separator:a3be6d5e24cf741ca5b32e38a59c78c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afef317681231d103b0f08d1753e9c40b"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; Base &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezconfig_1_1YamlFactory.html#afef317681231d103b0f08d1753e9c40b">Create</a> (YamlArg y)</td></tr>
+<tr class="memdesc:afef317681231d103b0f08d1753e9c40b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an object from yaml.  <a href="classezconfig_1_1YamlFactory.html#afef317681231d103b0f08d1753e9c40b">More...</a><br /></td></tr>
+<tr class="separator:afef317681231d103b0f08d1753e9c40b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classezconfig_1_1Factory"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classezconfig_1_1Factory')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory&lt; Base, YamlArg &gt;</a></td></tr>
 <tr class="memitem:ab0e58523c9aa7bf1621d1347226225d4 inherit pub_static_methods_classezconfig_1_1Factory"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezconfig_1_1Factory.html#ab0e58523c9aa7bf1621d1347226225d4">Register</a> (const std::string &amp;tag, std::function&lt; std::unique_ptr&lt; Base &gt;(Args...)&gt; factory)</td></tr>
 <tr class="memdesc:ab0e58523c9aa7bf1621d1347226225d4 inherit pub_static_methods_classezconfig_1_1Factory"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factory method to the registry.  <a href="classezconfig_1_1Factory.html#ab0e58523c9aa7bf1621d1347226225d4">More...</a><br /></td></tr>
@@ -130,7 +130,7 @@ requires (std::is_base_of_v&lt;Base, Derived&gt;)</td></tr>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Base&gt;<br />
 class ezconfig::YamlFactory&lt; Base &gt;</div><p >A <a class="el" href="classezconfig_1_1YamlFactory.html" title="A YamlFactory creates objects in a class hierarchy from yaml.">YamlFactory</a> creates objects in a class hierarchy from yaml. </p>
 
-<p class="definition">Definition at line <a class="el" href="yaml_8hpp_source.html#l00019">19</a> of file <a class="el" href="yaml_8hpp_source.html">yaml.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="yaml_8hpp_source.html#l00031">31</a> of file <a class="el" href="yaml_8hpp_source.html">yaml.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aefc4d9b136b1dca432980a8942876998" name="aefc4d9b136b1dca432980a8942876998"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aefc4d9b136b1dca432980a8942876998">&#9670;&#160;</a></span>FactoryBase</h2>
@@ -146,13 +146,13 @@ template&lt;typename Base &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="yaml_8hpp_source.html#l00022">22</a> of file <a class="el" href="yaml_8hpp_source.html">yaml.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="yaml_8hpp_source.html#l00034">34</a> of file <a class="el" href="yaml_8hpp_source.html">yaml.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7f3e8fba2fe36a6a9c85aaba13e272f0" name="a7f3e8fba2fe36a6a9c85aaba13e272f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f3e8fba2fe36a6a9c85aaba13e272f0">&#9670;&#160;</a></span>Create()</h2>
+<a id="afef317681231d103b0f08d1753e9c40b" name="afef317681231d103b0f08d1753e9c40b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afef317681231d103b0f08d1753e9c40b">&#9670;&#160;</a></span>Create()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -166,7 +166,7 @@ template&lt;typename Base &gt; </div>
           <td class="memname">static std::unique_ptr&lt; Base &gt; <a class="el" href="classezconfig_1_1YamlFactory.html">ezconfig::YamlFactory</a>&lt; Base &gt;::Create </td>
           <td>(</td>
           <td class="paramtype">YamlArg&#160;</td>
-          <td class="paramname"><em>yaml</em></td><td>)</td>
+          <td class="paramname"><em>y</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -179,12 +179,12 @@ template&lt;typename Base &gt; </div>
 
 <p>Create an object from yaml. </p>
 
-<p class="definition">Definition at line <a class="el" href="yaml_8hpp_source.html#l00049">49</a> of file <a class="el" href="yaml_8hpp_source.html">yaml.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="yaml_8hpp_source.html#l00063">63</a> of file <a class="el" href="yaml_8hpp_source.html">yaml.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a056bcb7b5558ff1c502117770e0692e0" name="a056bcb7b5558ff1c502117770e0692e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a056bcb7b5558ff1c502117770e0692e0">&#9670;&#160;</a></span>Register()</h2>
+<a id="a3be6d5e24cf741ca5b32e38a59c78c9d" name="a3be6d5e24cf741ca5b32e38a59c78c9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3be6d5e24cf741ca5b32e38a59c78c9d">&#9670;&#160;</a></span>Register()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,7 +192,7 @@ template&lt;typename Base &gt; </div>
 template&lt;typename Base &gt; </div>
 <div class="memtemplate">
 template&lt;typename Derived , typename Intermediate  = Derived&gt; <br />
-requires (std::is_base_of_v&lt;Base, Derived&gt;)</div>
+requires ( std::is_base_of_v&lt;Base, Derived&gt; &amp;&amp; YamlParseable&lt;Intermediate&gt; &amp;&amp; std::is_constructible_v&lt;Derived, Intermediate &amp;&amp;&gt;)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -224,7 +224,7 @@ requires (std::is_base_of_v&lt;Base, Derived&gt;)</div>
 <p >!tag object</p>
 <p >to Derived, where object can be yaml-converted to Intermediate. </p>
 
-<p class="definition">Definition at line <a class="el" href="yaml_8hpp_source.html#l00039">39</a> of file <a class="el" href="yaml_8hpp_source.html">yaml.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="yaml_8hpp_source.html#l00053">53</a> of file <a class="el" href="yaml_8hpp_source.html">yaml.hpp</a>.</p>
 
 </div>
 </div>
