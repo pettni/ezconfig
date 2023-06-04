@@ -52,8 +52,7 @@ install(
 # Generate CONFIG file
 include(CMakePackageConfigHelpers)
 configure_package_config_file(
-  cmake/ConfigTemplate.cmake.in
-  ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
+  cmake/ConfigTemplate.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
   INSTALL_DESTINATION ${EXPORT_DEST_DIR}
   NO_SET_AND_CHECK_MACRO
 )

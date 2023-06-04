@@ -1,5 +1,5 @@
 with section("format"):
-  line_width = 80
+  line_width = 100
   tab_size = 2
   max_subgroups_hwrap = 2
   max_pargs_hwrap = 3

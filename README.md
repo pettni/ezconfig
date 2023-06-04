@@ -110,7 +110,10 @@ EZ_JSON_REGISTER(MyBase, "mytag", MyDerived, MyDerived::Config);
 
 ## TODOs
 
-* Add missing yaml and json conversions, including from boost::hana structs.
+- [x] Extra yaml types decode
+- [ ] Extra yaml types encode
+- [ ] Extra json types decode
+- [ ] Extra json types encode
 
 
 <!-- MARKDOWN LINKS AND IMAGES -->
