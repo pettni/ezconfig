@@ -3,12 +3,14 @@ cmake_minimum_required(VERSION 3.25)
 include(Dependencies.cmake)
 
 include(CTest)
+set(SANITIZERS "address,leak,undefined")
 
 add_library(testopts INTERFACE)
 target_link_libraries(testopts INTERFACE ezconfig Catch2::Catch2WithMain)
 target_compile_options(
   testopts
   INTERFACE -fdiagnostics-color=always
+            $<$<CONFIG:Debug>:-fsanitize=${SANITIZERS}>
             -Wall
             -Wcast-align
             -Wconversion
@@ -25,6 +27,7 @@ target_compile_options(
             -Wsign-conversion
             -Wunused
 )
+target_link_options(testopts INTERFACE $<$<CONFIG:Debug>:-fsanitize=${SANITIZERS}>)
 
 add_executable(test_general registration.cpp test_general.cpp)
 target_link_libraries(test_general PRIVATE testopts)
