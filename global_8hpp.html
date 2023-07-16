@@ -114,6 +114,9 @@ Macros</h2></td></tr>
 <tr class="memitem:ab1bfb411459abacd66e0474d61056d95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8hpp.html#ab1bfb411459abacd66e0474d61056d95">EZ_GLOBAL_DEFINE</a>(...)</td></tr>
 <tr class="memdesc:ab1bfb411459abacd66e0474d61056d95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a template specialization of gInstance that returns the global instance.  <a href="global_8hpp.html#ab1bfb411459abacd66e0474d61056d95">More...</a><br /></td></tr>
 <tr class="separator:ab1bfb411459abacd66e0474d61056d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad325988ac1aa36a52a7f22ce11b3786a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8hpp.html#ad325988ac1aa36a52a7f22ce11b3786a">EZ_GLOBAL_INSTANCE</a>(...)&#160;&#160;&#160;<a class="el" href="global_8hpp.html#afae7b312a848185c115f90ce22b541f6">::ezconfig::gInstance</a>&lt;__VA_ARGS__&gt;()</td></tr>
+<tr class="memdesc:ad325988ac1aa36a52a7f22ce11b3786a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the global instance for a type.  <a href="global_8hpp.html#ad325988ac1aa36a52a7f22ce11b3786a">More...</a><br /></td></tr>
+<tr class="separator:ad325988ac1aa36a52a7f22ce11b3786a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -143,7 +146,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  <span class="keyword">template</span>&lt;&gt;                   \</div>
-<div class="line">  __VA_ARGS__ &amp; ::ezconfig::gInstance&lt;__VA_ARGS__&gt;();</div>
+<div class="line">  __VA_ARGS__ &amp; ::ezconfig::gInstance&lt;__VA_ARGS__&gt;()</div>
 </div><!-- fragment -->
 <p>Declare a template specialization of gInstance. </p>
 <p >Use this in the '.hpp' file to declare a global instance getter for the class.</p>
@@ -173,13 +176,36 @@ Functions</h2></td></tr>
 <div class="line">  {                                                  \</div>
 <div class="line">    <span class="keyword">static</span> __VA_ARGS__ global_instance{};            \</div>
 <div class="line">    <span class="keywordflow">return</span> global_instance;                          \</div>
-<div class="line">  }</div>
+<div class="line">  }                                                  \</div>
+<div class="line">  static_assert(<span class="keyword">true</span>)</div>
 </div><!-- fragment -->
 <p>Define a template specialization of gInstance that returns the global instance. </p>
 <p >Use this in the '.cpp' file to define a unique global instance for the class.</p>
 <dl class="section note"><dt>Note</dt><dd>Must be used outside of namespaces. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="global_8hpp_source.html#l00040">40</a> of file <a class="el" href="global_8hpp_source.html">global.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad325988ac1aa36a52a7f22ce11b3786a" name="ad325988ac1aa36a52a7f22ce11b3786a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad325988ac1aa36a52a7f22ce11b3786a">&#9670;&#160;</a></span>EZ_GLOBAL_INSTANCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EZ_GLOBAL_INSTANCE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="global_8hpp.html#afae7b312a848185c115f90ce22b541f6">::ezconfig::gInstance</a>&lt;__VA_ARGS__&gt;()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve the global instance for a type. </p>
+
+<p class="definition">Definition at line <a class="el" href="global_8hpp_source.html#l00052">52</a> of file <a class="el" href="global_8hpp_source.html">global.hpp</a>.</p>
 
 </div>
 </div>

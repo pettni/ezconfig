@@ -156,12 +156,11 @@ requires ( std::is_base_of_v&lt;Base, Derived&gt; &amp;&amp; YamlParseable&lt;In
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="global_8hpp.html#ab1bfb411459abacd66e0474d61056d95">EZ_GLOBAL_DEFINE</a>(<a class="code hl_class" href="classezconfig_1_1Factory.html">ezconfig::Factory&lt;Base, const YAML::Node &amp;&gt;</a>);             \</div>
+<b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="factory_8hpp.html#a91f48a98fa790123a08f789e134f7893">EZ_FACTORY_DEFINE</a>(Base, <span class="keyword">const</span> YAML::Node &amp;);                               \</div>
 <div class="line">  <span class="keyword">template</span> std::unique_ptr&lt;Base&gt; ezconfig::yaml::Create(<span class="keyword">const</span> YAML::Node &amp;); \</div>
 <div class="line">  <span class="keyword">template</span> <span class="keyword">struct </span><a class="code hl_struct" href="structYAML_1_1convert.html">YAML::convert&lt;std::shared_ptr&lt;Base&gt;</a>&gt;;                      \</div>
-<div class="line">  <span class="keyword">template</span> <span class="keyword">struct </span><a class="code hl_struct" href="structYAML_1_1convert.html">YAML::convert&lt;std::unique_ptr&lt;Base&gt;</a>&gt;;</div>
-<div class="ttc" id="aclassezconfig_1_1Factory_html"><div class="ttname"><a href="classezconfig_1_1Factory.html">ezconfig::Factory</a></div><div class="ttdoc">A Factory creates objects in a class hierarchy.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00026">factory.hpp:27</a></div></div>
-<div class="ttc" id="aglobal_8hpp_html_ab1bfb411459abacd66e0474d61056d95"><div class="ttname"><a href="global_8hpp.html#ab1bfb411459abacd66e0474d61056d95">EZ_GLOBAL_DEFINE</a></div><div class="ttdeci">#define EZ_GLOBAL_DEFINE(...)</div><div class="ttdoc">Define a template specialization of gInstance that returns the global instance.</div><div class="ttdef"><b>Definition:</b> <a href="global_8hpp_source.html#l00040">global.hpp:40</a></div></div>
+<div class="line">  <span class="keyword">template</span> <span class="keyword">struct </span><a class="code hl_struct" href="structYAML_1_1convert.html">YAML::convert&lt;std::unique_ptr&lt;Base&gt;</a>&gt;</div>
+<div class="ttc" id="afactory_8hpp_html_a91f48a98fa790123a08f789e134f7893"><div class="ttname"><a href="factory_8hpp.html#a91f48a98fa790123a08f789e134f7893">EZ_FACTORY_DEFINE</a></div><div class="ttdeci">#define EZ_FACTORY_DEFINE(Base,...)</div><div class="ttdoc">Macro to define a global factory instance.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00069">factory.hpp:69</a></div></div>
 <div class="ttc" id="astructYAML_1_1convert_html"><div class="ttname"><a href="structYAML_1_1convert.html">YAML::convert</a></div><div class="ttdef"><b>Definition:</b> <a href="yaml__fwd_8hpp_source.html#l00020">yaml_fwd.hpp:20</a></div></div>
 </div><!-- fragment -->
 <p>Define a global yaml factory for a base class. </p>

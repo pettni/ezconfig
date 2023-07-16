@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="global_8hpp.html#addf1571c436c24e2c1da374ea31fccc0">   29</a></span><span class="preprocessor">#define EZ_GLOBAL_DECLARE(...) \</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">  template&lt;&gt;                   \</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">  __VA_ARGS__ &amp; ::ezconfig::gInstance&lt;__VA_ARGS__&gt;();</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">  __VA_ARGS__ &amp; ::ezconfig::gInstance&lt;__VA_ARGS__&gt;()</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="global_8hpp.html#ab1bfb411459abacd66e0474d61056d95">   40</a></span><span class="preprocessor">#define EZ_GLOBAL_DEFINE(...)                        \</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">  template&lt;&gt;                                         \</span></div>
@@ -105,7 +105,10 @@ $(function() {
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">  {                                                  \</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">    static __VA_ARGS__ global_instance{};            \</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">    return global_instance;                          \</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">  }</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">  }                                                  \</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">  static_assert(true)</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="global_8hpp.html#ad325988ac1aa36a52a7f22ce11b3786a">   52</a></span><span class="preprocessor">#define EZ_GLOBAL_INSTANCE(...) ::ezconfig::gInstance&lt;__VA_ARGS__&gt;()</span></div>
 <div class="ttc" id="aglobal_8hpp_html_afae7b312a848185c115f90ce22b541f6"><div class="ttname"><a href="global_8hpp.html#afae7b312a848185c115f90ce22b541f6">ezconfig::gInstance</a></div><div class="ttdeci">T &amp; gInstance()</div><div class="ttdoc">Getter for global instances.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

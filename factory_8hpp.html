@@ -82,7 +82,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">factory.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -127,12 +128,121 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory&lt; Base, Args &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classezconfig_1_1Factory.html" title="A Factory creates objects in a class hierarchy.">Factory</a> creates objects in a class hierarchy.  <a href="classezconfig_1_1Factory.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a1405f6acb439602b700820af56b48e72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#a1405f6acb439602b700820af56b48e72">EZ_FACTORY_DECLARE</a>(Base, ...)&#160;&#160;&#160;<a class="el" href="global_8hpp.html#addf1571c436c24e2c1da374ea31fccc0">EZ_GLOBAL_DECLARE</a>(<a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory</a>&lt;Base __VA_OPT__(, ) __VA_ARGS__&gt;)</td></tr>
+<tr class="memdesc:a1405f6acb439602b700820af56b48e72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to declare a global factory instance.  <a href="factory_8hpp.html#a1405f6acb439602b700820af56b48e72">More...</a><br /></td></tr>
+<tr class="separator:a1405f6acb439602b700820af56b48e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91f48a98fa790123a08f789e134f7893"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#a91f48a98fa790123a08f789e134f7893">EZ_FACTORY_DEFINE</a>(Base, ...)&#160;&#160;&#160;<a class="el" href="global_8hpp.html#ab1bfb411459abacd66e0474d61056d95">EZ_GLOBAL_DEFINE</a>(<a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory</a>&lt;Base __VA_OPT__(, ) __VA_ARGS__&gt;)</td></tr>
+<tr class="memdesc:a91f48a98fa790123a08f789e134f7893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to define a global factory instance.  <a href="factory_8hpp.html#a91f48a98fa790123a08f789e134f7893">More...</a><br /></td></tr>
+<tr class="separator:a91f48a98fa790123a08f789e134f7893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a393029049d6394a87f55701320b788b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#a393029049d6394a87f55701320b788b2">EZ_FACTORY_INSTANCE</a>(Base, ...)&#160;&#160;&#160;<a class="el" href="global_8hpp.html#ad325988ac1aa36a52a7f22ce11b3786a">EZ_GLOBAL_INSTANCE</a>(<a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory</a>&lt;Base __VA_OPT__(, ) __VA_ARGS__&gt;)</td></tr>
+<tr class="memdesc:a393029049d6394a87f55701320b788b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to define a global factory instance.  <a href="factory_8hpp.html#a393029049d6394a87f55701320b788b2">More...</a><br /></td></tr>
+<tr class="separator:a393029049d6394a87f55701320b788b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Factory base class. </p>
 
 <p class="definition">Definition in file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a1405f6acb439602b700820af56b48e72" name="a1405f6acb439602b700820af56b48e72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1405f6acb439602b700820af56b48e72">&#9670;&#160;</a></span>EZ_FACTORY_DECLARE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EZ_FACTORY_DECLARE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Base, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="global_8hpp.html#addf1571c436c24e2c1da374ea31fccc0">EZ_GLOBAL_DECLARE</a>(<a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory</a>&lt;Base __VA_OPT__(, ) __VA_ARGS__&gt;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro to declare a global factory instance. </p>
+
+<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00066">66</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a91f48a98fa790123a08f789e134f7893" name="a91f48a98fa790123a08f789e134f7893"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91f48a98fa790123a08f789e134f7893">&#9670;&#160;</a></span>EZ_FACTORY_DEFINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EZ_FACTORY_DEFINE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Base, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="global_8hpp.html#ab1bfb411459abacd66e0474d61056d95">EZ_GLOBAL_DEFINE</a>(<a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory</a>&lt;Base __VA_OPT__(, ) __VA_ARGS__&gt;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro to define a global factory instance. </p>
+
+<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00069">69</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a393029049d6394a87f55701320b788b2" name="a393029049d6394a87f55701320b788b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a393029049d6394a87f55701320b788b2">&#9670;&#160;</a></span>EZ_FACTORY_INSTANCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EZ_FACTORY_INSTANCE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Base, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="global_8hpp.html#ad325988ac1aa36a52a7f22ce11b3786a">EZ_GLOBAL_INSTANCE</a>(<a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory</a>&lt;Base __VA_OPT__(, ) __VA_ARGS__&gt;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro to define a global factory instance. </p>
+
+<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00072">72</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
