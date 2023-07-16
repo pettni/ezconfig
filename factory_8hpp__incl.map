@@ -3,6 +3,6 @@
 <area shape="rect" id="node2" title=" " alt="" coords="5,79,84,104"/>
 <area shape="rect" id="node3" title=" " alt="" coords="108,79,155,104"/>
 <area shape="rect" id="node4" title=" " alt="" coords="179,79,247,104"/>
-<area shape="rect" id="node5" href="$factory__impl_8hpp_source.html" title=" " alt="" coords="271,79,387,104"/>
-<area shape="rect" id="node6" title=" " alt="" coords="294,152,363,177"/>
+<area shape="rect" id="node5" title=" " alt="" coords="271,79,341,104"/>
+<area shape="rect" id="node6" href="$global_8hpp.html" title="Utilities to define and maintain a global instance." alt="" coords="365,79,445,104"/>
 </map>

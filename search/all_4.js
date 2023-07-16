@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['json_2ehpp_0',['json.hpp',['../json_8hpp.html',1,'']]],
-  ['jsonfactory_1',['JsonFactory',['../classezconfig_1_1JsonFactory.html',1,'ezconfig']]]
+  ['ginstance_0',['gInstance',['../global_8hpp.html#afae7b312a848185c115f90ce22b541f6',1,'ezconfig']]],
+  ['global_2ehpp_1',['global.hpp',['../global_8hpp.html',1,'']]]
 ];

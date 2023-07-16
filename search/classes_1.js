@@ -8,7 +8,7 @@ var searchData=
   ['convert_3c_20std_3a_3aoptional_3c_20t_20_3e_20_3e_5',['convert&lt; std::optional&lt; T &gt; &gt;',['../structYAML_1_1convert_3_01std_1_1optional_3_01T_01_4_01_4.html',1,'YAML']]],
   ['convert_3c_20std_3a_3ashared_5fptr_3c_20base_20_3e_20_3e_6',['convert&lt; std::shared_ptr&lt; Base &gt; &gt;',['../structYAML_1_1convert_3_01std_1_1shared__ptr_3_01Base_01_4_01_4.html',1,'YAML']]],
   ['convert_3c_20std_3a_3aunique_5fptr_3c_20base_20_3e_20_3e_7',['convert&lt; std::unique_ptr&lt; Base &gt; &gt;',['../structYAML_1_1convert_3_01std_1_1unique__ptr_3_01Base_01_4_01_4.html',1,'YAML']]],
-  ['convert_3c_20std_3a_3aunordered_5fmap_3c_20std_3a_3astring_2c_20t_20_3e_20_3e_8',['convert&lt; std::unordered_map&lt; std::string, T &gt; &gt;',['../structYAML_1_1convert_3_01std_1_1unordered__map_3_01std_1_1string_00_01T_01_4_01_4.html',1,'YAML']]],
+  ['convert_3c_20std_3a_3aunordered_5fmap_3c_20k_2c_20v_2c_20c_2c_20a_20_3e_20_3e_8',['convert&lt; std::unordered_map&lt; K, V, C, A &gt; &gt;',['../structYAML_1_1convert_3_01std_1_1unordered__map_3_01K_00_01V_00_01C_00_01A_01_4_01_4.html',1,'YAML']]],
   ['convert_3c_20std_3a_3avariant_3c_20ts_2e_2e_2e_20_3e_20_3e_9',['convert&lt; std::variant&lt; Ts... &gt; &gt;',['../structYAML_1_1convert_3_01std_1_1variant_3_01Ts_8_8_8_01_4_01_4.html',1,'YAML']]],
   ['convert_3c_20t_20_3e_10',['convert&lt; T &gt;',['../structYAML_1_1convert_3_01T_01_4.html',1,'YAML']]]
 ];

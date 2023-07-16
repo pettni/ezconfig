@@ -82,8 +82,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle"><div class="title">factory.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -93,7 +92,8 @@ $(function() {
 <div class="textblock"><code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
-<code>#include &quot;factory_impl.hpp&quot;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &quot;<a class="el" href="global_8hpp_source.html">global.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for factory.hpp:</div>
 <div class="dyncontent">
@@ -103,8 +103,8 @@ Include dependency graph for factory.hpp:</div>
 <area shape="rect" title=" " alt="" coords="5,79,84,104"/>
 <area shape="rect" title=" " alt="" coords="108,79,155,104"/>
 <area shape="rect" title=" " alt="" coords="179,79,247,104"/>
-<area shape="rect" href="factory__impl_8hpp_source.html" title=" " alt="" coords="271,79,387,104"/>
-<area shape="rect" title=" " alt="" coords="294,152,363,177"/>
+<area shape="rect" title=" " alt="" coords="271,79,341,104"/>
+<area shape="rect" href="global_8hpp.html" title="Utilities to define and maintain a global instance." alt="" coords="365,79,445,104"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -112,10 +112,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="factory_8hpp__dep__incl.png" border="0" usemap="#ainclude_2ezconfig_2factory_8hppdep" alt=""/></div>
 <map name="ainclude_2ezconfig_2factory_8hppdep" id="ainclude_2ezconfig_2factory_8hppdep">
-<area shape="rect" title="Factory base class." alt="" coords="87,5,268,31"/>
-<area shape="rect" href="factory__impl_8hpp_source.html" title=" " alt="" coords="5,79,163,119"/>
-<area shape="rect" href="json_8hpp.html" title="Json factory." alt="" coords="187,86,354,111"/>
-<area shape="rect" href="yaml_8hpp.html" title="Yaml factory." alt="" coords="378,86,547,111"/>
+<area shape="rect" title="Factory base class." alt="" coords="101,5,282,31"/>
+<area shape="rect" href="json_8hpp.html" title="Json factory." alt="" coords="5,167,172,192"/>
+<area shape="rect" href="json__fwd_8hpp.html" title="Json factory forward declarations." alt="" coords="65,79,208,119"/>
+<area shape="rect" href="yaml_8hpp.html" title="Yaml factory." alt="" coords="209,167,379,192"/>
+<area shape="rect" href="yaml__fwd_8hpp.html" title="Yaml factory forward declarations." alt="" coords="284,79,429,119"/>
 </map>
 </div>
 </div>
@@ -126,43 +127,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory&lt; Base, Args &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classezconfig_1_1Factory.html" title="A Factory creates objects in a class hierarchy.">Factory</a> creates objects in a class hierarchy.  <a href="classezconfig_1_1Factory.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a2eb36f4fde661b1a5fa9c8ed9334c9bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#a2eb36f4fde661b1a5fa9c8ed9334c9bb">EZ_DECLARE</a>(...)&#160;&#160;&#160;template class <a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory</a>&lt;__VA_ARGS__&gt;</td></tr>
-<tr class="memdesc:a2eb36f4fde661b1a5fa9c8ed9334c9bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declare a Factory by instantiating its template.  <a href="factory_8hpp.html#a2eb36f4fde661b1a5fa9c8ed9334c9bb">More...</a><br /></td></tr>
-<tr class="separator:a2eb36f4fde661b1a5fa9c8ed9334c9bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Factory base class. </p>
 
 <p class="definition">Definition in file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a2eb36f4fde661b1a5fa9c8ed9334c9bb" name="a2eb36f4fde661b1a5fa9c8ed9334c9bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2eb36f4fde661b1a5fa9c8ed9334c9bb">&#9670;&#160;</a></span>EZ_DECLARE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EZ_DECLARE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em></td><td>)</td>
-          <td>&#160;&#160;&#160;template class <a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory</a>&lt;__VA_ARGS__&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Declare a Factory by instantiating its template. </p>
-<p >Example: Declare a <em>MyBase</em> factory with two arguments of type <em>int</em> and <em>std::string</em>. </p><div class="fragment"><div class="line"><a class="code hl_define" href="factory_8hpp.html#a2eb36f4fde661b1a5fa9c8ed9334c9bb">EZ_DECLARE</a>(MyBase, <span class="keywordtype">int</span>, std::string);</div>
-<div class="ttc" id="afactory_8hpp_html_a2eb36f4fde661b1a5fa9c8ed9334c9bb"><div class="ttname"><a href="factory_8hpp.html#a2eb36f4fde661b1a5fa9c8ed9334c9bb">EZ_DECLARE</a></div><div class="ttdeci">#define EZ_DECLARE(...)</div><div class="ttdoc">Declare a Factory by instantiating its template.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00053">factory.hpp:53</a></div></div>
-</div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00053">53</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5

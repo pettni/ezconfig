@@ -77,7 +77,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>YAML</b></li><li class="navelem"><a class="el" href="structYAML_1_1convert_3_01std_1_1chrono_1_1duration_3_01int64__t_00_01std_1_1ratio_3_01Num_00_01Den_01_4_01_4_01_4.html">convert&lt; std::chrono::duration&lt; int64_t, std::ratio&lt; Num, Den &gt; &gt; &gt;</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespaceYAML.html">YAML</a></li><li class="navelem"><a class="el" href="structYAML_1_1convert_3_01std_1_1chrono_1_1duration_3_01int64__t_00_01std_1_1ratio_3_01Num_00_01Den_01_4_01_4_01_4.html">convert&lt; std::chrono::duration&lt; int64_t, std::ratio&lt; Num, Den &gt; &gt; &gt;</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -88,7 +88,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Decode a chrono type from yaml.  
+<p>Convert a chrono type to/from yaml.  
  <a href="structYAML_1_1convert_3_01std_1_1chrono_1_1duration_3_01int64__t_00_01std_1_1ratio_3_01Num_00_01Den_01_4_01_4_01_4.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="stl__fwd_8hpp_source.html">stl_fwd.hpp</a>&gt;</code></p>
@@ -97,10 +97,12 @@ $(function() {
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a1f076f4ecdb3eeb7934319d7aed6ff8e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structYAML_1_1convert_3_01std_1_1chrono_1_1duration_3_01int64__t_00_01std_1_1ratio_3_01Num_00_01Den_01_4_01_4_01_4.html#a1f076f4ecdb3eeb7934319d7aed6ff8e">decode</a> (const Node &amp;yaml, std::chrono::duration&lt; int64_t, std::ratio&lt; Num, Den &gt; &gt; &amp;obj)</td></tr>
 <tr class="separator:a1f076f4ecdb3eeb7934319d7aed6ff8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66e8da9c3fa4669158faac25c94d733f"><td class="memItemLeft" align="right" valign="top">static Node&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structYAML_1_1convert_3_01std_1_1chrono_1_1duration_3_01int64__t_00_01std_1_1ratio_3_01Num_00_01Den_01_4_01_4_01_4.html#a66e8da9c3fa4669158faac25c94d733f">encode</a> (const std::chrono::duration&lt; int64_t, std::ratio&lt; Num, Den &gt; &gt; &amp;rhs)</td></tr>
+<tr class="separator:a66e8da9c3fa4669158faac25c94d733f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;intmax_t Num, intmax_t Den&gt;<br />
-struct YAML::convert&lt; std::chrono::duration&lt; int64_t, std::ratio&lt; Num, Den &gt; &gt; &gt;</div><p >Decode a chrono type from yaml. </p>
+struct YAML::convert&lt; std::chrono::duration&lt; int64_t, std::ratio&lt; Num, Den &gt; &gt; &gt;</div><p >Convert a chrono type to/from yaml. </p>
 <p >The yaml representation is e.g. "40ms" or "100us". The supported suffixes are</p><ul>
 <li>h: hours</li>
 <li>m: minutes</li>
@@ -110,7 +112,7 @@ struct YAML::convert&lt; std::chrono::duration&lt; int64_t, std::ratio&lt; Num, 
 <li>ns: nanoseconds </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="stl__fwd_8hpp_source.html#l00059">59</a> of file <a class="el" href="stl__fwd_8hpp_source.html">stl_fwd.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stl__fwd_8hpp_source.html#l00066">66</a> of file <a class="el" href="stl__fwd_8hpp_source.html">stl_fwd.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1f076f4ecdb3eeb7934319d7aed6ff8e" name="a1f076f4ecdb3eeb7934319d7aed6ff8e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1f076f4ecdb3eeb7934319d7aed6ff8e">&#9670;&#160;</a></span>decode()</h2>
@@ -148,13 +150,43 @@ template&lt;intmax_t Num, intmax_t Den&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="stl_8hpp_source.html#l00041">41</a> of file <a class="el" href="stl_8hpp_source.html">stl.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stl_8hpp_source.html#l00061">61</a> of file <a class="el" href="stl_8hpp_source.html">stl.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a66e8da9c3fa4669158faac25c94d733f" name="a66e8da9c3fa4669158faac25c94d733f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66e8da9c3fa4669158faac25c94d733f">&#9670;&#160;</a></span>encode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;intmax_t Num, intmax_t Den&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Node <a class="el" href="structYAML_1_1convert.html">YAML::convert</a>&lt; std::chrono::duration&lt; int64_t, std::ratio&lt; Num, Den &gt; &gt; &gt;::encode </td>
+          <td>(</td>
+          <td class="paramtype">const std::chrono::duration&lt; int64_t, std::ratio&lt; Num, Den &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="stl_8hpp_source.html#l00089">89</a> of file <a class="el" href="stl_8hpp_source.html">stl.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
-<li>include/ezconfig/yaml_extra/<a class="el" href="stl__fwd_8hpp_source.html">stl_fwd.hpp</a></li>
-<li>include/ezconfig/yaml_extra/<a class="el" href="stl_8hpp_source.html">stl.hpp</a></li>
+<li>include/ezconfig/yaml_types/<a class="el" href="stl__fwd_8hpp_source.html">stl_fwd.hpp</a></li>
+<li>include/ezconfig/yaml_types/<a class="el" href="stl_8hpp_source.html">stl.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

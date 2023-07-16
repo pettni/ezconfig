@@ -8,8 +8,9 @@ var searchData=
   ['convert_3c_20std_3a_3aoptional_3c_20t_20_3e_20_3e_5',['convert&lt; std::optional&lt; T &gt; &gt;',['../structYAML_1_1convert_3_01std_1_1optional_3_01T_01_4_01_4.html',1,'YAML']]],
   ['convert_3c_20std_3a_3ashared_5fptr_3c_20base_20_3e_20_3e_6',['convert&lt; std::shared_ptr&lt; Base &gt; &gt;',['../structYAML_1_1convert_3_01std_1_1shared__ptr_3_01Base_01_4_01_4.html',1,'YAML']]],
   ['convert_3c_20std_3a_3aunique_5fptr_3c_20base_20_3e_20_3e_7',['convert&lt; std::unique_ptr&lt; Base &gt; &gt;',['../structYAML_1_1convert_3_01std_1_1unique__ptr_3_01Base_01_4_01_4.html',1,'YAML']]],
-  ['convert_3c_20std_3a_3aunordered_5fmap_3c_20std_3a_3astring_2c_20t_20_3e_20_3e_8',['convert&lt; std::unordered_map&lt; std::string, T &gt; &gt;',['../structYAML_1_1convert_3_01std_1_1unordered__map_3_01std_1_1string_00_01T_01_4_01_4.html',1,'YAML']]],
+  ['convert_3c_20std_3a_3aunordered_5fmap_3c_20k_2c_20v_2c_20c_2c_20a_20_3e_20_3e_8',['convert&lt; std::unordered_map&lt; K, V, C, A &gt; &gt;',['../structYAML_1_1convert_3_01std_1_1unordered__map_3_01K_00_01V_00_01C_00_01A_01_4_01_4.html',1,'YAML']]],
   ['convert_3c_20std_3a_3avariant_3c_20ts_2e_2e_2e_20_3e_20_3e_9',['convert&lt; std::variant&lt; Ts... &gt; &gt;',['../structYAML_1_1convert_3_01std_1_1variant_3_01Ts_8_8_8_01_4_01_4.html',1,'YAML']]],
   ['convert_3c_20t_20_3e_10',['convert&lt; T &gt;',['../structYAML_1_1convert_3_01T_01_4.html',1,'YAML']]],
-  ['create_11',['Create',['../classezconfig_1_1Factory.html#a0fd416c95f60ed8671386ee02e83d032',1,'ezconfig::Factory::Create()'],['../classezconfig_1_1JsonFactory.html#ab37a0777dabf6ec4ee4b6aa551eb5c2a',1,'ezconfig::JsonFactory::Create()'],['../classezconfig_1_1YamlFactory.html#afef317681231d103b0f08d1753e9c40b',1,'ezconfig::YamlFactory::Create()']]]
+  ['create_11',['create',['../classezconfig_1_1Factory.html#af3ab4ccf18e397c09775aebf25afc5e6',1,'ezconfig::Factory']]],
+  ['create_12',['Create',['../json_8hpp.html#a1d5bfc9ccc6b391aa5c6b1cbc1bac7eb',1,'ezconfig::json::Create()'],['../yaml_8hpp.html#af46042af966c884dfd82711e13d207ad',1,'ezconfig::yaml::Create()']]]
 ];

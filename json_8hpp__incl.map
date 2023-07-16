@@ -1,11 +1,13 @@
 <map id="include/ezconfig/json.hpp" name="include/ezconfig/json.hpp">
-<area shape="rect" id="node1" title="Json factory." alt="" coords="118,5,285,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,79,136,104"/>
-<area shape="rect" id="node3" href="$factory_8hpp.html" title="Factory base class." alt="" coords="281,79,367,104"/>
-<area shape="rect" id="node9" href="$macro_8hpp_source.html" title=" " alt="" coords="160,79,243,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="146,152,225,177"/>
-<area shape="rect" id="node5" title=" " alt="" coords="249,152,295,177"/>
-<area shape="rect" id="node6" title=" " alt="" coords="319,152,387,177"/>
-<area shape="rect" id="node7" href="$factory__impl_8hpp_source.html" title=" " alt="" coords="411,152,527,177"/>
-<area shape="rect" id="node8" title=" " alt="" coords="435,225,504,251"/>
+<area shape="rect" id="node1" title="Json factory." alt="" coords="113,5,280,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="29,79,159,104"/>
+<area shape="rect" id="node3" href="$factory_8hpp.html" title="Factory base class." alt="" coords="138,152,223,177"/>
+<area shape="rect" id="node9" href="$json__fwd_8hpp.html" title="Json factory forward declarations." alt="" coords="263,79,362,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="411,225,489,251"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,225,52,251"/>
+<area shape="rect" id="node6" title=" " alt="" coords="76,225,144,251"/>
+<area shape="rect" id="node7" title=" " alt="" coords="169,225,238,251"/>
+<area shape="rect" id="node8" href="$global_8hpp.html" title="Utilities to define and maintain a global instance." alt="" coords="262,225,342,251"/>
+<area shape="rect" id="node10" title=" " alt="" coords="248,152,407,177"/>
+<area shape="rect" id="node11" href="$macro_8hpp_source.html" title=" " alt="" coords="431,152,514,177"/>
 </map>

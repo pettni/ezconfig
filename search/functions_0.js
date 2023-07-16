@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['create_0',['Create',['../classezconfig_1_1Factory.html#a0fd416c95f60ed8671386ee02e83d032',1,'ezconfig::Factory::Create()'],['../classezconfig_1_1JsonFactory.html#ab37a0777dabf6ec4ee4b6aa551eb5c2a',1,'ezconfig::JsonFactory::Create()'],['../classezconfig_1_1YamlFactory.html#afef317681231d103b0f08d1753e9c40b',1,'ezconfig::YamlFactory::Create()']]]
+  ['add_0',['add',['../classezconfig_1_1Factory.html#a3f804d1d6d05a25220cf0b26a4e839a7',1,'ezconfig::Factory']]],
+  ['add_1',['Add',['../json_8hpp.html#a167e0e54cbeaf61a4288930f6b3a4c8e',1,'ezconfig::json::Add()'],['../yaml_8hpp.html#a5da2dd5411c51b82f470dbf616ed678b',1,'ezconfig::yaml::Add()']]]
 ];
