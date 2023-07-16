@@ -13,7 +13,7 @@ public:
   virtual std::string id() = 0;
 };
 
-EZ_JSON_DECLARE(TBase);
+EZ_JSON_DEFINE(TBase);
 
 class TDerived1 : public TBase
 {
@@ -57,14 +57,14 @@ EZ_JSON_REGISTER(TBase, "d3", TDerived3);
 
 TEST_CASE("JsonCreateIntermediate")
 {
-  auto d1 = EZ_JSON_CREATE(TBase, nlohmann::json::parse(R"(
+  auto d1 = ezconfig::JsonCreate<TBase>(nlohmann::json::parse(R"(
   {
     "d1": "hello"
   }
 )"));
   REQUIRE(d1->id() == "hello");
 
-  auto d2 = EZ_JSON_CREATE(TBase, nlohmann::json::parse(R"(
+  auto d2 = ezconfig::JsonCreate<TBase>(nlohmann::json::parse(R"(
   {
     "d2": 123
   }
@@ -74,7 +74,7 @@ TEST_CASE("JsonCreateIntermediate")
 
 TEST_CASE("JsonCreateDirect")
 {
-  auto d3 = EZ_JSON_CREATE(TBase, nlohmann::json::parse(R"(
+  auto d3 = ezconfig::JsonCreate<TBase>(nlohmann::json::parse(R"(
   {
     "d3": {
         "x": 1,
@@ -87,7 +87,7 @@ TEST_CASE("JsonCreateDirect")
 
 TEST_CASE("JsonTooLong")
 {
-  REQUIRE_THROWS(EZ_JSON_CREATE(TBase, nlohmann::json::parse(R"(
+  REQUIRE_THROWS(ezconfig::JsonCreate<TBase>(nlohmann::json::parse(R"(
   {
     "d1": "hello",
     "d2": 123
@@ -97,7 +97,7 @@ TEST_CASE("JsonTooLong")
 
 TEST_CASE("JsonNotObject")
 {
-  REQUIRE_THROWS(EZ_JSON_CREATE(TBase, nlohmann::json::parse(R"(
+  REQUIRE_THROWS(ezconfig::JsonCreate<TBase>(nlohmann::json::parse(R"(
   {
     "hello"
   }

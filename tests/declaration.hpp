@@ -6,8 +6,8 @@ class TestBase
 {
 public:
   virtual ~TestBase() = default;
-  virtual int id() = 0;
+  virtual int id()    = 0;
 };
 
-EZ_DECLARE(TestBase);
-EZ_DECLARE(TestBase, int, std::string);
+EZ_GLOBAL_DECLARE(ezconfig::Factory<TestBase>);
+EZ_GLOBAL_DECLARE(ezconfig::Factory<TestBase, int, std::string>);

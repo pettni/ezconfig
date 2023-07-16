@@ -9,11 +9,11 @@ using namespace ezconfig;
 class TBase
 {
 public:
-  virtual ~TBase() = default;
+  virtual ~TBase()         = default;
   virtual std::string id() = 0;
 };
 
-EZ_YAML_DECLARE(TBase);
+EZ_YAML_DEFINE(TBase);
 
 class TDerived1 : public TBase
 {
@@ -40,15 +40,15 @@ private:
 EZ_YAML_REGISTER(TBase, "!d1", TDerived1, std::string);
 EZ_YAML_REGISTER(TBase, "!d2", TDerived2, int);
 
-TEST_CASE("JsonCreate")
+TEST_CASE("YamlCreate")
 {
-  auto d1 = EZ_YAML_CREATE(TBase, YAML::Load(R"(
+  auto d1 = yaml::Create<TBase>(YAML::Load(R"(
 !d1
 hello
 )"));
   REQUIRE(d1->id() == "hello");
 
-  auto d2 = EZ_YAML_CREATE(TBase, YAML::Load(R"(
+  auto d2 = yaml::Create<TBase>(YAML::Load(R"(
 !d2
 123
 )"));
@@ -57,13 +57,13 @@ hello
 
 TEST_CASE("YamlInvalidTag1")
 {
-  auto f = [] { YamlFactory<TBase>::Register<TDerived1, std::string>("d3"); };
+  auto f = [] { yaml::Add<TBase, TDerived1, std::string>("d3"); };
   REQUIRE_THROWS_AS(f(), std::logic_error);
 }
 
 TEST_CASE("YamlInvalidTag2")
 {
-  auto f = [] { YamlFactory<TBase>::Register<TDerived1, std::string>("!"); };
+  auto f = [] { yaml::Add<TBase, TDerived1, std::string>("!"); };
   REQUIRE_THROWS_AS(f(), std::logic_error);
 }
 

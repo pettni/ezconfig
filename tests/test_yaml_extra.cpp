@@ -4,15 +4,61 @@
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/matchers/catch_matchers_floating_point.hpp>
 
-#include "ezconfig/yaml_extra/eigen.hpp"
-#include "ezconfig/yaml_extra/hana.hpp"
-#include "ezconfig/yaml_extra/stl.hpp"
+#include "ezconfig/yaml_types/eigen.hpp"
+#include "ezconfig/yaml_types/hana.hpp"
+#include "ezconfig/yaml_types/stl.hpp"
 
-TEST_CASE("std_optional")
+std::string yaml_to_str(const YAML::Node & yaml)
+{
+  YAML::Emitter em;
+  em << yaml;
+  return em.c_str();
+}
+
+TEST_CASE("std_optional_decode")
 {
   REQUIRE(YAML::Load("null").as<std::optional<int>>() == std::nullopt);
   REQUIRE(YAML::Load("~").as<std::optional<int>>() == std::nullopt);
   REQUIRE(YAML::Load("123").as<std::optional<int>>() == 123);
+}
+
+TEST_CASE("std_optional_encode")
+{
+  std::optional<std::string> obj1 = "hello";
+  REQUIRE(yaml_to_str(YAML::Node(obj1)) == std::string{"hello"});
+
+  std::optional<std::string> obj2 = std::nullopt;
+  REQUIRE(yaml_to_str(YAML::Node(obj2)) == std::string{"~"});
+}
+
+TEST_CASE("std_map_decode")
+{
+  const std::string yaml_str = R"(
+obj1: 1.23
+obj2: 2.23
+obj3: 3.23
+)";
+
+  auto obj = YAML::Load(yaml_str).as<std::unordered_map<std::string, double>>();
+
+  REQUIRE(obj.size() == 3);
+  REQUIRE(obj["obj1"] == 1.23);
+  REQUIRE(obj["obj2"] == 2.23);
+  REQUIRE(obj["obj3"] == 3.23);
+}
+
+TEST_CASE("std_map_encode")
+{
+  std::map<std::string, int> obj1{
+    {"obj1", 3},
+    {"obj2", 4},
+    {"obj3", 4},
+  };
+
+  auto str = yaml_to_str(YAML::Node(obj1));
+  REQUIRE(str == R"(obj1: 3
+obj2: 4
+obj3: 4)");
 }
 
 using MyVariant = std::variant<double, std::string, int>;
@@ -189,4 +235,17 @@ y: 0.
 z: 1.
   )";
   REQUIRE(YAML::Load(quat_str).as<Eigen::Quaterniond>().isApprox(Eigen::Quaterniond{0, 0, 0, 1}));
+}
+
+TEST_CASE("variant_tags")
+{
+  using V = std::variant<std::string, int>;
+  YAML::variant_tags<V>::Add<std::string>("!str");
+  YAML::variant_tags<V>::Add<int>("!i");
+
+  REQUIRE(YAML::variant_tags<V>::TagToType("!str") == V{std::string{}});
+  REQUIRE(YAML::variant_tags<V>::TagToType("!i") == V{int{}});
+
+  REQUIRE(YAML::variant_tags<V>::TypeToTag<std::string>() == std::string{"!str"});
+  REQUIRE(YAML::variant_tags<V>::TypeToTag<int>() == std::string{"!i"});
 }

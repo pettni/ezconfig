@@ -3,6 +3,8 @@
 /**
  * @file yaml.hpp
  * @brief Yaml factory.
+ *
+ * Include this file in implementation file for the base class and any derived classes.
  */
 
 #pragma once
@@ -10,128 +12,98 @@
 #include <yaml-cpp/yaml.h>
 
 #include "factory.hpp"
-#include "macro.hpp"
-
-namespace ezconfig {
-
-// @brief Argument for yaml factory.
-using YamlArg = const YAML::Node &;
-
-// clang-format off
-template<typename T>
-concept YamlParseable = requires(YamlArg y) {
-  {y.as<T>()} -> std::convertible_to<T>;
-};
-// clang-format on
+#include "yaml_fwd.hpp"
 
 /**
- * @brief A YamlFactory creates objects in a class hierarchy from yaml.
- */
-template<typename Base>
-class YamlFactory : public Factory<Base, YamlArg>
-{
-public:
-  using FactoryBase = Factory<Base, YamlArg>;
-
-  /**
-   * @brief Register a factory method.
-   *
-   * @tparam Derived sub-class of Base.
-   * @tparam Intermediate type that is parseable from yaml, and that can construct Derived.
-   *
-   * Adds conversions from yaml of the form
-   *
-   * !tag
-   * object
-   *
-   * to Derived, where object can be yaml-converted to Intermediate.
-   */
-  template<typename Derived, typename Intermediate = Derived>
-    requires(
-      std::is_base_of_v<Base, Derived> && YamlParseable<Intermediate>
-      && std::is_constructible_v<Derived, Intermediate &&>)
-  static void Register(const std::string & tag)
-  {
-    if (tag.size() < 2 || tag[0] != '!') { throw std::logic_error("yaml tag must start with !"); }
-    auto creator = [](YamlArg y) { return std::make_unique<Derived>(y.as<Intermediate>()); };
-    FactoryBase::Register(tag, std::move(creator));
-  }
-
-  /**
-   * @brief Create an object from yaml.
-   */
-  static std::unique_ptr<Base> Create(YamlArg y) { return FactoryBase::Create(y.Tag(), y); }
-};
-
-}  // namespace ezconfig
-
-/**
- * @brief Declare a yaml factory for a base class.
+ * @brief Define a global yaml factory for a base class.
+ *
+ * Do this in the base class implementation file.
  *
  * @param Base factory base class.
  *
- * The factory creates pointers to Base.
- *
- * Example: Declare a \a MyBase yaml factory.
+ * Example: Define a \a MyBase yaml factory.
  * @code
- * EZ_YAML_DECLARE(MyBase);
+ * EZ_YAML_DEFINE(MyBase);
  * @endcode
  */
-#define EZ_YAML_DECLARE(Base) EZ_DECLARE(Base, ezconfig::YamlArg)
+#define EZ_YAML_DEFINE(Base)                                                 \
+  EZ_FACTORY_DEFINE(Base, const YAML::Node &);                               \
+  template std::unique_ptr<Base> ezconfig::yaml::Create(const YAML::Node &); \
+  template struct YAML::convert<std::shared_ptr<Base>>;                      \
+  template struct YAML::convert<std::unique_ptr<Base>>
 
 /**
- * @brief Register a tagged conversion with a yaml factory.
+ * @brief Register a conversion method with the global yaml factory.
+ *
+ * Do this in the implementation files for derived classes.
  *
  * @param Base factory base class.
  * @param tag conversion identifier (string).
  * @param Derived factory derived class.
  * @param Intermediate optional intermediate class.
  *
- * @note Intermediate can be omitted. In that case Derived must be json-parseable.
- * @note If provided, Intermediate must be a json-parsable type.
+ * @note Intermediate can be omitted. In that case Derived must be yaml-parseable.
+ * @note If provided, Intermediate must be a yaml-parsable type.
  *
- * Example: Register a creator for \a MyDerived with tag "mytag".
+ * Example: Register a creator for \a MyDerived with tag "!mytag".
  * @code
- * EZ_YAML_REGISTER(MyBase, "mytag", MyDerived, MyDerivedConfig);
+ * EZ_YAML_REGISTER(MyBase, "!mytag", MyDerived, MyDerivedConfig);
  * @endcode
  */
 #define EZ_YAML_REGISTER(Base, tag, Derived, ...) \
-  EZ_STATIC_INVOKE(ezconfig::YamlFactory<Base>::Register<Derived __VA_OPT__(, ) __VA_ARGS__>, tag)
+  EZ_STATIC_INVOKE(&ezconfig::yaml::Add<Base, Derived __VA_OPT__(, ) __VA_ARGS__>, tag)
 
-/**
- * @brief Create an object from yaml..
- *
- * @param Base factory base class
- * @param y yaml data
- *
- * @code
- * EZ_YAML_CREATE(MyBase, YAML::Load(data));
- * @endcode
- */
-#define EZ_YAML_CREATE(Base, y) ezconfig::YamlFactory<Base>::Create(y)
+namespace ezconfig::yaml {
 
-/**
- * @brief Converter yaml -> std::shared_ptr<Base> using YamlFactory<Base>.
- */
-template<typename Base>
-struct YAML::convert<std::shared_ptr<Base>>
-{
-  static bool decode(const YAML::Node & y, std::shared_ptr<Base> & ptr)
-  {
-    ptr = ezconfig::YamlFactory<Base>::Create(y);
-    return true;
-  }
+// clang-format off
+template<typename T>
+concept YamlParseable = requires(const YAML::Node & y) {
+  {y.as<T>()} -> std::convertible_to<T>;
 };
+// clang-format on
 
 /**
- * @brief Converter yaml -> std::unique_ptr<Base> using YamlFactory<Base>.
+ * @brief Add a factory method.
+ *
+ * @tparam Derived sub-class of Base.
+ * @tparam Intermediate type that is parseable from yaml, and that can construct Derived.
+ *
+ * Adds conversions from yaml of the form
+ *
+ * !tag
+ * object
+ *
+ * to Derived, where object is yaml-converted to Intermediate.
  */
-template<typename Base>
-struct YAML::convert<std::unique_ptr<Base>>
+template<typename Base, typename Derived, typename Intermediate = Derived>
+  requires(
+    std::is_base_of_v<Base, Derived> && YamlParseable<Intermediate>
+    && std::is_constructible_v<Derived, Intermediate &&>)
+void Add(const std::string & tag)
 {
-  static bool decode(const YAML::Node & y, std::unique_ptr<Base> & ptr)
-  {
-    ptr = ezconfig::YamlFactory<Base>::Create(y);
-    return true;
-  }
-};
+  if (tag.size() < 2 || tag[0] != '!') { throw std::logic_error("yaml tag must start with !"); }
+  auto creator = [](const YAML::Node & y) { return std::make_unique<Derived>(y.as<Intermediate>()); };
+  EZ_FACTORY_INSTANCE(Base, const YAML::Node &).add(tag, std::move(creator));
+}
+
+template<typename Base>
+std::unique_ptr<Base> Create(const YAML::Node & y)
+{
+  return EZ_FACTORY_INSTANCE(Base, const YAML::Node &).create(y.Tag(), y);
+}
+
+}  // namespace ezconfig::yaml
+
+template<typename Base>
+bool YAML::convert<std::shared_ptr<Base>>::decode(const YAML::Node & y, std::shared_ptr<Base> & ptr)
+{
+  ptr = ::ezconfig::yaml::Create<Base>(y);
+  return true;
+}
+
+template<typename Base>
+bool YAML::convert<std::unique_ptr<Base>>::decode(const YAML::Node & y, std::unique_ptr<Base> & ptr)
+{
+  ptr = ::ezconfig::yaml::Create<Base>(y);
+  return true;
+}

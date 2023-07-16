@@ -20,8 +20,11 @@ struct MyDerived : public MyBase
 
 /// JSON
 
-// declare factory for hierarchy
+// declare factory for hierarchy (in header)
 EZ_JSON_DECLARE(MyBase);
+
+// declare factory for hierarchy (in implementatiohn file)
+EZ_JSON_DEFINE(MyBase);
 
 // make Config struct parse-able from json
 // this can be automated with boost::hana
@@ -36,8 +39,11 @@ EZ_JSON_REGISTER(MyBase, "mytag", MyDerived, MyDerived::Config);
 
 /// YAML
 
-// declare factory for hierarchy
+// declare factory for hierarchy (in header)
 EZ_YAML_DECLARE(MyBase);
+
+// define factory for hierarchy (in implementation file)
+EZ_YAML_DEFINE(MyBase);
 
 // make Config struct parse-able from json
 // this can be automated with boost::hana

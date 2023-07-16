@@ -10,8 +10,8 @@ using namespace ezconfig;
 
 TEST_CASE("CreateWithoutArgs")
 {
-  auto d1 = Factory<TestBase>::Create("d1");
-  auto d2 = Factory<TestBase>::Create("d2");
+  auto d1 = gInstance<Factory<TestBase>>().create("d1");
+  auto d2 = gInstance<Factory<TestBase>>().create("d2");
 
   REQUIRE(d1->id() == 1);
   REQUIRE(d2->id() == 2);
@@ -19,8 +19,8 @@ TEST_CASE("CreateWithoutArgs")
 
 TEST_CASE("CreateWithArgs")
 {
-  auto d1 = Factory<TestBase, int, std::string>::Create("d1", 1, "hello");
-  auto d2 = Factory<TestBase, int, std::string>::Create("d2", 1, "hello");
+  auto d1 = gInstance<Factory<TestBase, int, std::string>>().create("d1", 1, "hello");
+  auto d2 = gInstance<Factory<TestBase, int, std::string>>().create("d2", 1, "hello");
 
   REQUIRE(d1->id() == 1);
   REQUIRE(d2->id() == 2);
@@ -35,8 +35,9 @@ public:
 TEST_CASE("AddExisting")
 {
   REQUIRE_THROWS_AS(
-    Factory<TestBase>::Register("d1", []() -> std::unique_ptr<TestBase> { return std::make_unique<TestDerived3>(); }),
+    gInstance<Factory<TestBase>>().add(
+      "d1", []() -> std::unique_ptr<TestBase> { return std::make_unique<TestDerived3>(); }),
     std::logic_error);
 }
 
-TEST_CASE("CreateDoesNotExist") { REQUIRE_THROWS_AS(Factory<TestBase>::Create("d5"), std::logic_error); }
+TEST_CASE("CreateDoesNotExist") { REQUIRE_THROWS_AS(gInstance<Factory<TestBase>>().create("d5"), std::logic_error); }

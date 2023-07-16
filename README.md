@@ -64,10 +64,13 @@ auto obj = nlohmann::json::parse(json_data).get<std::map<std::string, std::uniqu
 Yaml conversion uses [`yaml-cpp`][yamlcpp-link].
 
 ```cpp
-#include <ezconfig/yaml.hpp>
-
-// declare factory for hierarchy
+// In the header file
+#include <ezconfig/yaml_fwd.hpp>
 EZ_YAML_DECLARE(MyBase);
+
+// In the implementation file
+#include <ezconfig/yaml.hpp>
+EZ_YAML_DEFINE(MyBase);
 
 // make Config struct parse-able from json
 // this can be automated with boost::hana
@@ -91,10 +94,14 @@ EZ_YAML_REGISTER(MyBase, "!mytag", MyDerived, MyDerived::Config);
 Json conversion uses [`nlohmann_json`][nlohjson-link].
 
 ```cpp
-#include <ezconfig/json.hpp>
+#include <ezconfig/json_fwd.hpp>
 
-// declare factory for hierarchy
+// In the header file
 EZ_JSON_DECLARE(MyBase);
+
+// In the implementation file
+#include <ezconfig/json.hpp>
+EZ_JSON_DEFINE(MyBase);
 
 // make Config struct parse-able from json
 // this can be automated with boost::hana
