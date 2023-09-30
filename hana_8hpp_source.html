@@ -98,8 +98,8 @@ $(function() {
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceYAML.html">YAML</a> {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keyword">requires</span>(boost::hana::Struct&lt;T&gt;::value) <span class="keywordtype">bool</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>convert&lt;T&gt;::decode(<span class="keyword">const</span> Node &amp; yaml, T &amp; t)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keyword">requires</span>(boost::hana::Struct&lt;T&gt;::value)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordtype">bool</span> convert&lt;T&gt;::decode(<span class="keyword">const</span> Node &amp; yaml, T &amp; t)</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  boost::hana::for_each(boost::hana::keys(t), [&amp;](<span class="keyword">auto</span> key) {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">using </span>ValT                  = std::decay_t&lt;<span class="keyword">decltype</span>(boost::hana::at_key(t, key))&gt;;</div>
