@@ -12,8 +12,8 @@
 namespace YAML {
 
 template<typename T>
-  requires(boost::hana::Struct<T>::value) bool
-convert<T>::decode(const Node & yaml, T & t)
+  requires(boost::hana::Struct<T>::value)
+bool convert<T>::decode(const Node & yaml, T & t)
 {
   boost::hana::for_each(boost::hana::keys(t), [&](auto key) {
     using ValT                  = std::decay_t<decltype(boost::hana::at_key(t, key))>;

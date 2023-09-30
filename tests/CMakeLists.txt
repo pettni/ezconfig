@@ -60,5 +60,5 @@ target_link_libraries(test_readme PRIVATE testopts yaml-cpp nlohmann_json::nlohm
 catch_discover_tests(test_readme)
 
 add_executable(test_yaml_extra test_yaml_extra.cpp)
-target_link_libraries(test_yaml_extra PRIVATE testopts Eigen Hana yaml-cpp)
+target_link_libraries(test_yaml_extra PRIVATE testopts Eigen Hana yaml-cpp smooth magic_enum)
 catch_discover_tests(test_yaml_extra)

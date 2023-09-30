@@ -33,3 +33,27 @@ if(Hana_ADDED)
   add_library(Hana INTERFACE IMPORTED)
   target_include_directories(Hana INTERFACE ${Hana_SOURCE_DIR}/include)
 endif()
+
+cpmaddpackage(
+  NAME smooth
+  VERSION master
+  GIT_REPOSITORY https://github.com/pettni/smooth.git
+  GIT_TAG master
+  DOWNLOAD_ONLY YES
+)
+if(smooth_ADDED)
+  add_library(smooth INTERFACE IMPORTED)
+  target_include_directories(smooth INTERFACE ${smooth_SOURCE_DIR}/include)
+endif()
+
+cpmaddpackage(
+  NAME magic_enum
+  VERSION v0.9.3
+  GIT_REPOSITORY https://github.com/Neargye/magic_enum.git
+  GIT_TAG v0.9.3
+  DOWNLOAD_ONLY YES
+)
+if(magic_enum_ADDED)
+  add_library(magic_enum INTERFACE IMPORTED)
+  target_include_directories(magic_enum INTERFACE ${magic_enum_SOURCE_DIR}/include)
+endif()

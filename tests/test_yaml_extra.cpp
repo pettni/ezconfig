@@ -5,7 +5,9 @@
 #include <catch2/matchers/catch_matchers_floating_point.hpp>
 
 #include "ezconfig/yaml_types/eigen.hpp"
+#include "ezconfig/yaml_types/enum.hpp"
 #include "ezconfig/yaml_types/hana.hpp"
+#include "ezconfig/yaml_types/smooth.hpp"
 #include "ezconfig/yaml_types/stl.hpp"
 
 std::string yaml_to_str(const YAML::Node & yaml)
@@ -192,6 +194,12 @@ member3: null
 TEST_CASE("eigen_vec_static")
 {
   REQUIRE(YAML::Load("[1., 2., 3.]").as<Eigen::Vector3d>().isApprox(Eigen::Vector3d{1, 2, 3}));
+  auto vec_str = R"(
+x: 1.
+y: 2.
+z: 3.
+  )";
+  REQUIRE(YAML::Load(vec_str).as<Eigen::Vector3d>().isApprox(Eigen::Vector3d{{1, 2, 3}}));
   REQUIRE(YAML::Load("[1., 2., 3., 4.]").as<Eigen::Vector4d>().isApprox(Eigen::Vector4d{1, 2, 3, 4}));
 }
 
@@ -210,6 +218,12 @@ TEST_CASE("eigen_mat_static")
 TEST_CASE("eigen_vec_dynamic")
 {
   REQUIRE(YAML::Load("[1., 2., 3.]").as<Eigen::VectorXd>().isApprox(Eigen::VectorXd{{1, 2, 3}}));
+  auto vec_str = R"(
+x: 1.
+y: 2.
+z: 3.
+  )";
+  REQUIRE(YAML::Load(vec_str).as<Eigen::VectorXd>().isApprox(Eigen::Vector3d{{1, 2, 3}}));
   REQUIRE(YAML::Load("[1., 2., 3., 4.]").as<Eigen::VectorXd>().isApprox(Eigen::VectorXd{{1, 2, 3, 4}}));
 }
 
@@ -228,13 +242,21 @@ TEST_CASE("eigen_mat_wrongsize")
 
 TEST_CASE("eigen_quat")
 {
-  auto quat_str = R"(
+  auto quat_str1 = R"(
 w: 0.
 x: 0.
 y: 0.
 z: 1.
   )";
-  REQUIRE(YAML::Load(quat_str).as<Eigen::Quaterniond>().isApprox(Eigen::Quaterniond{0, 0, 0, 1}));
+  REQUIRE(YAML::Load(quat_str1).as<Eigen::Quaterniond>().isApprox(Eigen::Quaterniond{0, 0, 0, 1}));
+
+  auto quat_str2 = R"(
+qw: 0.
+qx: 0.
+qy: 0.
+qz: 1.
+  )";
+  REQUIRE(YAML::Load(quat_str2).as<Eigen::Quaterniond>().isApprox(Eigen::Quaterniond{0, 0, 0, 1}));
 }
 
 TEST_CASE("variant_tags")
@@ -248,4 +270,55 @@ TEST_CASE("variant_tags")
 
   REQUIRE(YAML::variant_tags<V>::TypeToTag<std::string>() == std::string{"!str"});
   REQUIRE(YAML::variant_tags<V>::TypeToTag<int>() == std::string{"!i"});
+}
+
+TEST_CASE("smooth")
+{
+  auto quat_str = R"(
+w: 0.
+x: 0.
+y: 0.
+z: 1.
+  )";
+
+  auto pose_str1 = R"(
+translation:
+  x: 1.
+  y: -1.
+  z: 1.
+orientation:
+  w: 0.
+  x: 0.
+  y: 0.
+  z: 1.
+  )";
+
+  auto pose_str2 = R"(
+  x: 1.
+  y: -1.
+  z: 1.
+  qw: 0.
+  qx: 0.
+  qy: 0.
+  qz: 1.
+  )";
+
+  REQUIRE(YAML::Load(quat_str).as<smooth::SO3d>().isApprox(smooth::SO3d(Eigen::Quaterniond{0, 0, 0, 1})));
+  REQUIRE(YAML::Load(pose_str1).as<smooth::SE3d>().isApprox(
+    smooth::SE3d(smooth::SO3d{Eigen::Quaterniond{0, 0, 0, 1}}, Eigen::Vector3d{1, -1, 1})));
+  REQUIRE(YAML::Load(pose_str2).as<smooth::SE3d>().isApprox(
+    smooth::SE3d(smooth::SO3d{Eigen::Quaterniond{0, 0, 0, 1}}, Eigen::Vector3d{1, -1, 1})));
+}
+
+enum class TestEnum {
+  VALUE_1,
+  VALUE_2,
+  VALUE_3,
+};
+
+TEST_CASE("enum")
+{
+  REQUIRE(YAML::Load("VALUE_1").as<TestEnum>() == TestEnum::VALUE_1);
+  REQUIRE(YAML::Load("VALUE_3").as<TestEnum>() == TestEnum::VALUE_3);
+  REQUIRE_THROWS(YAML::Load("VALUE_4").as<TestEnum>());
 }

@@ -16,7 +16,9 @@ class Node;
 /**
  * @brief Decode a fixed-size Eigen vector from yaml.
  *
- * The YAML representation is a list, e.g. [1, 2, 3].
+ * The YAML representation is a list, e.g. "[1, 2, 3]",
+ * or, for vectors of size at most 3, a dictionary like
+ * "{x: 1, y: 2, z: 3}".
  */
 template<typename T, int Rows, int Cols, int Opts>
 struct convert<Eigen::Matrix<T, Rows, Cols, Opts>>
