@@ -94,14 +94,14 @@ std::unique_ptr<Base> Create(const YAML::Node & y)
 
 }  // namespace ezconfig::yaml
 
-template<typename Base>
+template<ezconfig::yaml::Constructible Base>
 bool YAML::convert<std::shared_ptr<Base>>::decode(const YAML::Node & y, std::shared_ptr<Base> & ptr)
 {
   ptr = ::ezconfig::yaml::Create<Base>(y);
   return true;
 }
 
-template<typename Base>
+template<ezconfig::yaml::Constructible Base>
 bool YAML::convert<std::unique_ptr<Base>>::decode(const YAML::Node & y, std::unique_ptr<Base> & ptr)
 {
   ptr = ::ezconfig::yaml::Create<Base>(y);

@@ -7,11 +7,8 @@
 
 #include "enum_fwd.hpp"
 
-namespace YAML {
-
-template<typename T>
-  requires(ezconfig::detail::is_scoped_enum<T>::value)
-bool convert<T>::decode(const Node & yaml, T & obj)
+template<ezconfig::ScopedEnum T>
+bool YAML::convert<T>::decode(const Node & yaml, T & obj)
 {
   auto maybe_val = magic_enum::enum_cast<T>(yaml.as<std::string>());
   if (maybe_val.has_value()) {
@@ -20,5 +17,3 @@ bool convert<T>::decode(const Node & yaml, T & obj)
   }
   return false;
 }
-
-}  // namespace YAML

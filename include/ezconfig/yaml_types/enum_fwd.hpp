@@ -4,17 +4,12 @@
 
 #include <type_traits>
 
-namespace ezconfig::detail {
-
-template<typename T, bool = std::is_enum_v<T>>
-struct is_scoped_enum : std::false_type
-{};
+namespace ezconfig {
 
 template<typename T>
-struct is_scoped_enum<T, true> : std::bool_constant<!std::is_convertible_v<T, std::underlying_type_t<T>>>
-{};
+concept ScopedEnum = requires { std::is_enum_v<T> && !std::is_convertible_v<T, std::underlying_type_t<T>>; };
 
-}  // namespace ezconfig::detail
+}  // namespace ezconfig
 
 namespace YAML {
 
@@ -27,8 +22,7 @@ class Node;
 /**
  * @brief Decode an enum from yaml.
  */
-template<typename T>
-  requires(ezconfig::detail::is_scoped_enum<T>::value)
+template<ezconfig::ScopedEnum T>
 struct convert<T>
 {
   static bool decode(const Node & yaml, T & obj);

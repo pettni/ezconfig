@@ -5,8 +5,8 @@
 
 using namespace ezconfig;
 
-EZ_GLOBAL_DEFINE(Factory<TestBase>);
-EZ_GLOBAL_DEFINE(Factory<TestBase, int, std::string>);
+EZ_FACTORY_DEFINE(TestBase);
+EZ_FACTORY_DEFINE(TestBase, int, std::string);
 
 class TestDerived1 : public TestBase
 {
@@ -20,20 +20,12 @@ public:
   virtual int id() { return 2; }
 };
 
-EZ_STATIC_INVOKE(&Factory<TestBase>::add, gInstance<Factory<TestBase>>(), "d1", [] {
-  return std::make_unique<TestDerived1>();
-});
-EZ_STATIC_INVOKE(&Factory<TestBase>::add, gInstance<Factory<TestBase>>(), "d2", [] {
-  return std::make_unique<TestDerived2>();
-});
+EZ_FACTORY_REGISTER(
+  "d1", [] { return std::make_unique<TestDerived1>(); }, TestBase);
+EZ_FACTORY_REGISTER(
+  "d2", [] { return std::make_unique<TestDerived2>(); }, TestBase);
 
-EZ_STATIC_INVOKE(
-  &Factory<TestBase, int, std::string>::add,
-  gInstance<Factory<TestBase, int, std::string>>(),
-  "d1",
-  [](int, std::string) { return std::make_unique<TestDerived1>(); });
-EZ_STATIC_INVOKE(
-  &Factory<TestBase, int, std::string>::add,
-  gInstance<Factory<TestBase, int, std::string>>(),
-  "d2",
-  [](int, std::string) { return std::make_unique<TestDerived2>(); });
+EZ_FACTORY_REGISTER(
+  "d1", [](int, std::string) { return std::make_unique<TestDerived1>(); }, TestBase, int, std::string);
+EZ_FACTORY_REGISTER(
+  "d2", [](int, std::string) { return std::make_unique<TestDerived2>(); }, TestBase, int, std::string);

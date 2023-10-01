@@ -29,7 +29,7 @@ struct convert<Eigen::Matrix<T, Rows, Cols, Opts>>
 /**
  * @brief Decode a Eigen quaternion from yaml.
  *
- * The YAML representation is a map with keys qw, qx, qy, qz.
+ * The YAML representation is a map with keys {w, x, y, z}, or with keys {qw, qx, qy, qz}.
  */
 template<typename T, int Opts>
 struct convert<Eigen::Quaternion<T, Opts>>

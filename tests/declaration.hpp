@@ -9,5 +9,5 @@ public:
   virtual int id()    = 0;
 };
 
-EZ_GLOBAL_DECLARE(ezconfig::Factory<TestBase>);
-EZ_GLOBAL_DECLARE(ezconfig::Factory<TestBase, int, std::string>);
+EZ_FACTORY_DECLARE(TestBase);
+EZ_FACTORY_DECLARE(TestBase, int, std::string);

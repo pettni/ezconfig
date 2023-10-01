@@ -107,28 +107,4 @@ Node convert<std::chrono::duration<int64_t, std::ratio<Num, Den>>>::encode(
   }
 }
 
-template<typename... Ts>
-bool convert<std::variant<Ts...>>::decode(const Node & yaml, std::variant<Ts...> & obj)
-{
-  const auto & type_names = variant_type_names<std::variant<Ts...>>::value;
-
-  if (type_names.contains(yaml.Tag())) {
-    std::visit([&]<typename T>(const T &) { obj = yaml.template as<T>(); }, type_names.at(yaml.Tag()));
-    return true;
-  }
-
-  throw YAML::ParserException{
-    yaml.Mark(),
-    "Tag '" + yaml.Tag() + "' not found in variant_type_names<>",
-  };
-}
-
-template<typename... Ts>
-Node convert<std::variant<Ts...>>::encode(const std::variant<Ts...> & obj)
-{
-  const auto & type_names = variant_type_names<std::variant<Ts...>>::value;
-
-  throw YAML::InvalidNode{"Not found"};
-}
-
 }  // namespace YAML

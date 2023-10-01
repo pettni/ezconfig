@@ -40,10 +40,10 @@ add_executable(test_linking test_general.cpp)
 target_link_libraries(test_linking PRIVATE testopts reg_test_lib)
 catch_discover_tests(test_linking)
 
-# add_executable(test_json test_json.cpp)
-# target_link_libraries(test_json PRIVATE testopts nlohmann_json::nlohmann_json)
-# catch_discover_tests(test_json)
-#
+add_executable(test_json test_json.cpp)
+target_link_libraries(test_json PRIVATE testopts nlohmann_json::nlohmann_json)
+catch_discover_tests(test_json)
+
 add_executable(test_yaml test_yaml.cpp)
 target_link_libraries(test_yaml PRIVATE testopts yaml-cpp)
 catch_discover_tests(test_yaml)

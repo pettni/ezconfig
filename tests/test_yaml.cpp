@@ -13,6 +13,7 @@ public:
   virtual std::string id() = 0;
 };
 
+EZ_YAML_DECLARE(TBase);
 EZ_YAML_DEFINE(TBase);
 
 class TDerived1 : public TBase
@@ -37,8 +38,27 @@ private:
   int m_x;
 };
 
+struct TDerived3 : public TBase
+{
+  int x{};
+  int y{};
+  virtual std::string id() { return std::to_string(x + y); }
+};
+
+template<>
+struct YAML::convert<TDerived3>
+{
+  static bool decode(const YAML::Node & yaml, TDerived3 & obj)
+  {
+    obj.x = yaml["x"].as<int>();
+    obj.y = yaml["y"].as<int>();
+    return true;
+  }
+};
+
 EZ_YAML_REGISTER(TBase, "!d1", TDerived1, std::string);
 EZ_YAML_REGISTER(TBase, "!d2", TDerived2, int);
+EZ_YAML_REGISTER(TBase, "!d3", TDerived3);
 
 TEST_CASE("YamlCreate")
 {

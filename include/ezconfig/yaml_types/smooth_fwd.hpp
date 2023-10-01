@@ -15,6 +15,8 @@ class Node;
 
 /**
  * @brief Decode an enum from yaml.
+ *
+ * Supported formats: same as Eigen quaternion.
  */
 template<typename T>
 struct convert<smooth::SO3<T>>
@@ -23,7 +25,23 @@ struct convert<smooth::SO3<T>>
 };
 
 /**
- * @brief Decode an enum from yaml.
+ * @brief Decode se3 object from yaml.
+ *
+ * Supported formats:
+ *
+ * Format 1:
+ *
+ *   translation: <vec3>
+ *   orientation: <so3>
+ *
+ * Format 2:
+ *   x: <floating>
+ *   y: <floating>
+ *   z: <floating>
+ *   qw: <floating>
+ *   qz: <floating>
+ *   qy: <floating>
+ *   qz: <floating>
  */
 template<typename T>
 struct convert<smooth::SE3<T>>

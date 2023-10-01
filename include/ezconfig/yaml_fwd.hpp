@@ -10,7 +10,6 @@
 #pragma once
 
 #include "factory.hpp"
-#include "global.hpp"
 #include "macro.hpp"
 
 /// YAML forward declarations.
@@ -21,6 +20,9 @@ struct convert;
 };  // namespace YAML
 
 namespace ezconfig::yaml {
+
+template<typename T>
+concept Constructible = ::ezconfig::Constructible<T, const YAML::Node &>;
 
 /**
  * @brief Create an object from yaml using the global factory.
@@ -55,18 +57,18 @@ std::unique_ptr<Base> Create(const YAML::Node & y);
 #define EZ_YAML_DECLARE(Base) EZ_FACTORY_DECLARE(Base, const YAML::Node &)
 
 /**
- * @brief Converter yaml -> std::shared_ptr<Base> using YamlFactory<Base>.
+ * @brief Converter yaml -> std::shared_ptr<Base> using yaml::Create().
  */
-template<typename Base>
+template<ezconfig::yaml::Constructible Base>
 struct YAML::convert<std::shared_ptr<Base>>
 {
   static bool decode(const YAML::Node & y, std::shared_ptr<Base> & ptr);
 };
 
 /**
- * @brief Converter yaml -> std::unique_ptr<Base> using YamlFactory<Base>.
+ * @brief Converter yaml -> std::unique_ptr<Base> using yaml::Create().
  */
-template<typename Base>
+template<ezconfig::yaml::Constructible Base>
 struct YAML::convert<std::unique_ptr<Base>>
 {
   static bool decode(const YAML::Node & y, std::unique_ptr<Base> & ptr);

@@ -1,6 +1,7 @@
 // Copyright (c) 2023 Petter Nilsson. MIT License. https://github.com/pettni/ezconfig
 
 #include <boost/hana/adapt_struct.hpp>
+#include <boost/hana/tuple.hpp>
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/matchers/catch_matchers_floating_point.hpp>
 
@@ -9,6 +10,8 @@
 #include "ezconfig/yaml_types/hana.hpp"
 #include "ezconfig/yaml_types/smooth.hpp"
 #include "ezconfig/yaml_types/stl.hpp"
+
+using namespace std::literals;
 
 std::string yaml_to_str(const YAML::Node & yaml)
 {
@@ -66,16 +69,15 @@ obj3: 4)");
 using MyVariant = std::variant<double, std::string, int>;
 
 template<>
-struct YAML::variant_type_names<MyVariant>
+struct ezconfig::variant_hana_maps<MyVariant>
 {
-  inline static const std::unordered_map<std::string, MyVariant> value{
-    {"!double", double{}},
-    {"!string", std::string{}},
-    {"!int", int{}},
-  };
+  static constexpr auto value = boost::hana::make_tuple(
+    boost::hana::make_pair("!double", boost::hana::type_c<double>),
+    boost::hana::make_pair("!int", boost::hana::type_c<int>),
+    boost::hana::make_pair("!string", boost::hana::type_c<std::string>));
 };
 
-TEST_CASE("stl_variant")
+TEST_CASE("variant")
 {
   const auto x = YAML::Load("!double 3.14").as<MyVariant>();
   REQUIRE(x.index() == 0);
@@ -88,6 +90,9 @@ TEST_CASE("stl_variant")
   const auto z = YAML::Load("!int 3").as<MyVariant>();
   REQUIRE(z.index() == 2);
   REQUIRE(std::get<int>(z) == 3);
+
+  REQUIRE_THROWS_AS(YAML::Load("!undefined 3.14").as<MyVariant>(), YAML::BadConversion);
+  REQUIRE_THROWS_AS(YAML::Load("!double hello").as<MyVariant>(), YAML::BadConversion);
 }
 
 TEST_CASE("variant_vec")
@@ -257,19 +262,6 @@ qy: 0.
 qz: 1.
   )";
   REQUIRE(YAML::Load(quat_str2).as<Eigen::Quaterniond>().isApprox(Eigen::Quaterniond{0, 0, 0, 1}));
-}
-
-TEST_CASE("variant_tags")
-{
-  using V = std::variant<std::string, int>;
-  YAML::variant_tags<V>::Add<std::string>("!str");
-  YAML::variant_tags<V>::Add<int>("!i");
-
-  REQUIRE(YAML::variant_tags<V>::TagToType("!str") == V{std::string{}});
-  REQUIRE(YAML::variant_tags<V>::TagToType("!i") == V{int{}});
-
-  REQUIRE(YAML::variant_tags<V>::TypeToTag<std::string>() == std::string{"!str"});
-  REQUIRE(YAML::variant_tags<V>::TypeToTag<int>() == std::string{"!i"});
 }
 
 TEST_CASE("smooth")

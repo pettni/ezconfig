@@ -62,13 +62,31 @@ protected:
   std::map<std::string, std::function<std::unique_ptr<Base>(Args...)>> m_tags;
 };
 
-/// @brief Macro to declare a global factory instance.
-#define EZ_FACTORY_DECLARE(Base, ...) EZ_GLOBAL_DECLARE(ezconfig::Factory<Base __VA_OPT__(, ) __VA_ARGS__>)
+/// @brief Type trait that marks existing factories.
+template<typename Base, typename... Args>
+struct has_factory : public std::false_type
+{};
 
-/// @brief Macro to define a global factory instance.
+/// @brief Concept that identifies existing factories.
+template<typename Base, typename... Args>
+concept Constructible = requires { has_factory<Base, Args...>::value == true; };
+
+/// @brief Declare a global factory instance.
+#define EZ_FACTORY_DECLARE(Base, ...)                                                   \
+  EZ_GLOBAL_DECLARE(ezconfig::Factory<Base __VA_OPT__(, ) __VA_ARGS__>);                \
+  template<>                                                                            \
+  struct ezconfig::has_factory<Base __VA_OPT__(, ) __VA_ARGS__> : public std::true_type \
+  {}
+
+/// @brief Define a global factory instance.
 #define EZ_FACTORY_DEFINE(Base, ...) EZ_GLOBAL_DEFINE(ezconfig::Factory<Base __VA_OPT__(, ) __VA_ARGS__>)
 
-/// @brief Macro to define a global factory instance.
+/// @brief Retrieve the global factory instance.
 #define EZ_FACTORY_INSTANCE(Base, ...) EZ_GLOBAL_INSTANCE(ezconfig::Factory<Base __VA_OPT__(, ) __VA_ARGS__>)
+
+/// @brief Register a tag and creator method in the global factory instance.
+#define EZ_FACTORY_REGISTER(tag, creator, Base, ...) \
+  EZ_STATIC_INVOKE(                                  \
+    &ezconfig::Factory<Base __VA_OPT__(, ) __VA_ARGS__>::add, EZ_FACTORY_INSTANCE(Base, __VA_ARGS__), tag, creator);
 
 }  // namespace ezconfig

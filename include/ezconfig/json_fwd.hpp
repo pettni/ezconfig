@@ -16,6 +16,9 @@
 
 namespace ezconfig::json {
 
+template<typename T>
+concept Constructible = ::ezconfig::Constructible<T, const nlohmann::json &>;
+
 /**
  * @brief Create an object using the factory.
  *
@@ -47,18 +50,18 @@ std::unique_ptr<Base> Create(const nlohmann::json & j);
 #define EZ_JSON_DECLARE(Base) EZ_FACTORY_DECLARE(Base, const nlohmann::json &)
 
 /**
- * @brief Converter json -> std::shared_ptr<Base> using JsonFactory<Base>.
+ * @brief Converter json -> std::shared_ptr<Base> using json::Create().
  */
-template<typename Base>
+template<ezconfig::json::Constructible Base>
 struct nlohmann::adl_serializer<std::shared_ptr<Base>>
 {
   static void from_json(const json & j, std::shared_ptr<Base> & ptr);
 };
 
 /**
- * @brief Converter json -> std::unique_ptr<Base> using JsonFactory<Base>.
+ * @brief Converter json -> std::unique_ptr<Base> using json::Create().
  */
-template<typename Base>
+template<ezconfig::json::Constructible Base>
 struct nlohmann::adl_serializer<std::unique_ptr<Base>>
 {
   static void from_json(const json & j, std::unique_ptr<Base> & ptr);
