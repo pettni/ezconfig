@@ -95,28 +95,28 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a92ef1c461ea43109a27c7fc4ed03f0b3"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structYAML_1_1convert_3_01T_01_4.html#a92ef1c461ea43109a27c7fc4ed03f0b3">decode</a> (const Node &amp;yaml, T &amp;obj)</td></tr>
-<tr class="separator:a92ef1c461ea43109a27c7fc4ed03f0b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27581bbe4706d240cb53858c87c5e10f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structYAML_1_1convert_3_01T_01_4.html#a27581bbe4706d240cb53858c87c5e10f">decode</a> (const Node &amp;yaml, T &amp;obj)</td></tr>
+<tr class="separator:a27581bbe4706d240cb53858c87c5e10f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51d4b72ecc4ab882c8215c7eb46bec4e"><td class="memItemLeft" align="right" valign="top"><a id="a51d4b72ecc4ab882c8215c7eb46bec4e" name="a51d4b72ecc4ab882c8215c7eb46bec4e"></a>
 static bool&#160;</td><td class="memItemRight" valign="bottom"><b>decode</b> (const Node &amp;yaml, T &amp;t)</td></tr>
 <tr class="separator:a51d4b72ecc4ab882c8215c7eb46bec4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
-requires (<a class="el" href="structezconfig_1_1detail_1_1is__scoped__enum.html">ezconfig::detail::is_scoped_enum</a>&lt;T&gt;::value)<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;ezconfig::ScopedEnum T&gt;<br />
+requires (boost::hana::Struct&lt;T&gt;::value)<br />
 struct YAML::convert&lt; T &gt;</div><p >Decode an enum from yaml. </p>
 <p >Decode a boost::hana struct from yaml. </p>
 
-<p class="definition">Definition at line <a class="el" href="enum__fwd_8hpp_source.html#l00032">32</a> of file <a class="el" href="enum__fwd_8hpp_source.html">enum_fwd.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="enum__fwd_8hpp_source.html#l00026">26</a> of file <a class="el" href="enum__fwd_8hpp_source.html">enum_fwd.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a92ef1c461ea43109a27c7fc4ed03f0b3" name="a92ef1c461ea43109a27c7fc4ed03f0b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92ef1c461ea43109a27c7fc4ed03f0b3">&#9670;&#160;</a></span>decode()</h2>
+<a id="a27581bbe4706d240cb53858c87c5e10f" name="a27581bbe4706d240cb53858c87c5e10f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27581bbe4706d240cb53858c87c5e10f">&#9670;&#160;</a></span>decode()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; <br />
-requires (<a class="el" href="structezconfig_1_1detail_1_1is__scoped__enum.html">ezconfig::detail::is_scoped_enum</a>&lt;T&gt;::value)</div>
+requires (boost::hana::Struct&lt;T&gt;::value)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -146,7 +146,7 @@ requires (<a class="el" href="structezconfig_1_1detail_1_1is__scoped__enum.html"
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="enum_8hpp_source.html#l00014">14</a> of file <a class="el" href="enum_8hpp_source.html">enum.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="enum_8hpp_source.html#l00011">11</a> of file <a class="el" href="enum_8hpp_source.html">enum.hpp</a>.</p>
 
 </div>
 </div>

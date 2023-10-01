@@ -1,12 +1,12 @@
 <map id="include/ezconfig/yaml.hpp" name="include/ezconfig/yaml.hpp">
 <area shape="rect" id="node1" title="Yaml factory." alt="" coords="110,5,279,31"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,79,120,104"/>
-<area shape="rect" id="node3" href="$factory_8hpp.html" title="Factory base class." alt="" coords="255,152,340,177"/>
+<area shape="rect" id="node3" href="$factory_8hpp.html" title="Factory base class." alt="" coords="240,152,325,177"/>
 <area shape="rect" id="node9" href="$yaml__fwd_8hpp.html" title="Yaml factory forward declarations." alt="" coords="144,79,245,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="171,225,250,251"/>
-<area shape="rect" id="node5" title=" " alt="" coords="274,225,321,251"/>
-<area shape="rect" id="node6" title=" " alt="" coords="345,225,413,251"/>
-<area shape="rect" id="node7" title=" " alt="" coords="437,225,507,251"/>
-<area shape="rect" id="node8" href="$global_8hpp.html" title="Utilities to define and maintain a global instance." alt="" coords="67,225,147,251"/>
-<area shape="rect" id="node10" href="$macro_8hpp_source.html" title=" " alt="" coords="148,152,231,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="91,225,170,251"/>
+<area shape="rect" id="node5" title=" " alt="" coords="194,225,241,251"/>
+<area shape="rect" id="node6" title=" " alt="" coords="265,225,333,251"/>
+<area shape="rect" id="node7" title=" " alt="" coords="357,225,427,251"/>
+<area shape="rect" id="node8" href="$global_8hpp.html" title="Utilities to define and maintain a global instance." alt="" coords="451,225,531,251"/>
+<area shape="rect" id="node10" href="$macro_8hpp_source.html" title=" " alt="" coords="119,152,201,177"/>
 </map>

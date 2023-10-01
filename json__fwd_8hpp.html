@@ -83,6 +83,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#concepts">Concepts</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">json_fwd.hpp File Reference</div></div>
@@ -125,10 +126,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnlohmann_1_1adl__serializer_3_01std_1_1shared__ptr_3_01Base_01_4_01_4.html">nlohmann::adl_serializer&lt; std::shared_ptr&lt; Base &gt; &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converter json -&gt; std::shared_ptr&lt;Base&gt; using JsonFactory&lt;Base&gt;.  <a href="structnlohmann_1_1adl__serializer_3_01std_1_1shared__ptr_3_01Base_01_4_01_4.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converter json -&gt; std::shared_ptr&lt;Base&gt; using json::Create().  <a href="structnlohmann_1_1adl__serializer_3_01std_1_1shared__ptr_3_01Base_01_4_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnlohmann_1_1adl__serializer_3_01std_1_1unique__ptr_3_01Base_01_4_01_4.html">nlohmann::adl_serializer&lt; std::unique_ptr&lt; Base &gt; &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converter json -&gt; std::unique_ptr&lt;Base&gt; using JsonFactory&lt;Base&gt;.  <a href="structnlohmann_1_1adl__serializer_3_01std_1_1unique__ptr_3_01Base_01_4_01_4.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converter json -&gt; std::unique_ptr&lt;Base&gt; using json::Create().  <a href="structnlohmann_1_1adl__serializer_3_01std_1_1unique__ptr_3_01Base_01_4_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -175,9 +176,9 @@ Functions</h2></td></tr>
 </dl>
 <p>The factory creates pointers to Base.</p>
 <p >Example: Declare a <em>MyBase</em> json factory. </p><div class="fragment"><div class="line"><a class="code hl_define" href="json__fwd_8hpp.html#afdc4f8a0861513c0d2c09ef2ea80c604">EZ_JSON_DECLARE</a>(MyBase);</div>
-<div class="ttc" id="ajson__fwd_8hpp_html_afdc4f8a0861513c0d2c09ef2ea80c604"><div class="ttname"><a href="json__fwd_8hpp.html#afdc4f8a0861513c0d2c09ef2ea80c604">EZ_JSON_DECLARE</a></div><div class="ttdeci">#define EZ_JSON_DECLARE(Base)</div><div class="ttdoc">Declare a json factory for a base class.</div><div class="ttdef"><b>Definition:</b> <a href="json__fwd_8hpp_source.html#l00047">json_fwd.hpp:47</a></div></div>
+<div class="ttc" id="ajson__fwd_8hpp_html_afdc4f8a0861513c0d2c09ef2ea80c604"><div class="ttname"><a href="json__fwd_8hpp.html#afdc4f8a0861513c0d2c09ef2ea80c604">EZ_JSON_DECLARE</a></div><div class="ttdeci">#define EZ_JSON_DECLARE(Base)</div><div class="ttdoc">Declare a json factory for a base class.</div><div class="ttdef"><b>Definition:</b> <a href="json__fwd_8hpp_source.html#l00050">json_fwd.hpp:50</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="json__fwd_8hpp_source.html#l00047">47</a> of file <a class="el" href="json__fwd_8hpp_source.html">json_fwd.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json__fwd_8hpp_source.html#l00050">50</a> of file <a class="el" href="json__fwd_8hpp_source.html">json_fwd.hpp</a>.</p>
 
 </div>
 </div>
@@ -215,7 +216,7 @@ template&lt;typename Base &gt; </div>
 </dl>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> obj = JsonCreate&lt;MyBase&gt;(nlohmann::json::parse(data));</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00050">50</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00089">89</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>

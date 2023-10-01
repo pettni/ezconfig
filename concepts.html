@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ezconfig: YAML::variant_type_names&lt; T &gt; Struct Template Reference</title>
+<title>ezconfig: Concepts</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -54,6 +54,7 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -75,39 +76,17 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="namespaceYAML.html">YAML</a></li><li class="navelem"><a class="el" href="structYAML_1_1variant__type__names.html">variant_type_names</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
-  <div class="headertitle"><div class="title">YAML::variant_type_names&lt; T &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">Concepts</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Type trait for std::variant&lt;&gt; yaml decoding.  
- <a href="structYAML_1_1variant__type__names.html#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
-struct YAML::variant_type_names&lt; T &gt;</div><p >Type trait for std::variant&lt;&gt; yaml decoding. </p>
-<p >Specializations should define a member "value" that maps yaml tags to type instantiations.</p>
-<p >Example: </p><div class="fragment"><div class="line"><span class="keyword">using </span>MyVariant = std::variant&lt;double, string, int&gt;;</div>
-<div class="line"><span class="comment">// Specialize type trait for MyVariant type</span></div>
-<div class="line"><span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><span class="keyword">struct </span><a class="code hl_struct" href="structYAML_1_1variant__type__names.html">YAML::variant_type_names</a>&lt;MyVariant&gt;</div>
-<div class="line">{</div>
-<div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> std::unordered_map&lt;std::string, MyVariant&gt; value{</div>
-<div class="line">    {<span class="stringliteral">&quot;!double&quot;</span>, <span class="keywordtype">double</span>{}},</div>
-<div class="line">    {<span class="stringliteral">&quot;!string&quot;</span>, std::string{}},</div>
-<div class="line">    {<span class="stringliteral">&quot;!int&quot;</span>, <span class="keywordtype">int</span>{}},</div>
-<div class="line">  };</div>
-<div class="line">};</div>
-<div class="ttc" id="astructYAML_1_1variant__type__names_html"><div class="ttname"><a href="structYAML_1_1variant__type__names.html">YAML::variant_type_names</a></div><div class="ttdoc">Type trait for std::variant&lt;&gt; yaml decoding.</div><div class="ttdef"><b>Definition:</b> <a href="stl__fwd_8hpp_source.html#l00094">stl_fwd.hpp:94</a></div></div>
-</div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="stl__fwd_8hpp_source.html#l00094">94</a> of file <a class="el" href="stl__fwd_8hpp_source.html">stl_fwd.hpp</a>.</p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>include/ezconfig/yaml_types/<a class="el" href="stl__fwd_8hpp_source.html">stl_fwd.hpp</a></li>
-</ul>
+<div class="textblock">Here is a list of all documented concepts with brief descriptions:</div><div class="directory">
+<div class="levels">[detail level <span onclick="javascript:toggleLevel(1);">1</span><span onclick="javascript:toggleLevel(2);">2</span>]</div><table class="directory">
+<tr id="row_0_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_0_" class="arrow" onclick="toggleFolder('0_')">&#9660;</span><span class="icona"><span class="icon">N</span></span><b>ezconfig</b></td><td class="desc"></td></tr>
+<tr id="row_0_0_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">R</span></span><a class="el" href="conceptezconfig_1_1Constructible.html" target="_self">Constructible</a></td><td class="desc">Concept that identifies existing factories </td></tr>
+<tr id="row_0_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">R</span></span><a class="el" href="conceptezconfig_1_1ScopedEnum.html" target="_self">ScopedEnum</a></td><td class="desc"></td></tr>
+</table>
+</div><!-- directory -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

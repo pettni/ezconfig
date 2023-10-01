@@ -88,7 +88,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Converter yaml -&gt; std::shared_ptr&lt;Base&gt; using YamlFactory&lt;Base&gt;.  
+<p>Converter yaml -&gt; std::shared_ptr&lt;Base&gt; using yaml::Create().  
  <a href="structYAML_1_1convert_3_01std_1_1shared__ptr_3_01Base_01_4_01_4.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="yaml__fwd_8hpp_source.html">yaml_fwd.hpp</a>&gt;</code></p>
@@ -99,10 +99,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ac6e49182d085833ccb35c1e0f9957270"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename Base&gt;<br />
-struct YAML::convert&lt; std::shared_ptr&lt; Base &gt; &gt;</div><p >Converter yaml -&gt; std::shared_ptr&lt;Base&gt; using YamlFactory&lt;Base&gt;. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;ezconfig::yaml::Constructible Base&gt;<br />
+struct YAML::convert&lt; std::shared_ptr&lt; Base &gt; &gt;</div><p >Converter yaml -&gt; std::shared_ptr&lt;Base&gt; using yaml::Create(). </p>
 
-<p class="definition">Definition at line <a class="el" href="yaml__fwd_8hpp_source.html#l00061">61</a> of file <a class="el" href="yaml__fwd_8hpp_source.html">yaml_fwd.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="yaml__fwd_8hpp_source.html#l00063">63</a> of file <a class="el" href="yaml__fwd_8hpp_source.html">yaml_fwd.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac6e49182d085833ccb35c1e0f9957270" name="ac6e49182d085833ccb35c1e0f9957270"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac6e49182d085833ccb35c1e0f9957270">&#9670;&#160;</a></span>decode()</h2>
@@ -110,7 +110,7 @@ struct YAML::convert&lt; std::shared_ptr&lt; Base &gt; &gt;</div><p >Converter y
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base &gt; </div>
+template&lt;ezconfig::yaml::Constructible Base&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

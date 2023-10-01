@@ -148,12 +148,12 @@ Register yaml converter</h2>
 <div class="line"> </div>
 <div class="line"><span class="comment">// register a factory method with a tag via MyDerived::Config</span></div>
 <div class="line"><a class="code hl_define" href="yaml_8hpp.html#a077386cd667825e1df2a05f1c4e4c14a">EZ_YAML_REGISTER</a>(MyBase, <span class="stringliteral">&quot;!mytag&quot;</span>, MyDerived, MyDerived::Config);</div>
-<div class="ttc" id="astructYAML_1_1convert_html"><div class="ttname"><a href="structYAML_1_1convert.html">YAML::convert</a></div><div class="ttdef"><b>Definition:</b> <a href="yaml__fwd_8hpp_source.html#l00020">yaml_fwd.hpp:20</a></div></div>
+<div class="ttc" id="astructYAML_1_1convert_html"><div class="ttname"><a href="structYAML_1_1convert.html">YAML::convert</a></div><div class="ttdef"><b>Definition:</b> <a href="yaml__fwd_8hpp_source.html#l00019">yaml_fwd.hpp:19</a></div></div>
 <div class="ttc" id="ayaml_8hpp_html"><div class="ttname"><a href="yaml_8hpp.html">yaml.hpp</a></div><div class="ttdoc">Yaml factory.</div></div>
 <div class="ttc" id="ayaml_8hpp_html_a077386cd667825e1df2a05f1c4e4c14a"><div class="ttname"><a href="yaml_8hpp.html#a077386cd667825e1df2a05f1c4e4c14a">EZ_YAML_REGISTER</a></div><div class="ttdeci">#define EZ_YAML_REGISTER(Base, tag, Derived,...)</div><div class="ttdoc">Register a conversion method with the global yaml factory.</div><div class="ttdef"><b>Definition:</b> <a href="yaml_8hpp_source.html#l00053">yaml.hpp:53</a></div></div>
 <div class="ttc" id="ayaml_8hpp_html_a6d9b3b08a3a99b4712e518226fe75e45"><div class="ttname"><a href="yaml_8hpp.html#a6d9b3b08a3a99b4712e518226fe75e45">EZ_YAML_DEFINE</a></div><div class="ttdeci">#define EZ_YAML_DEFINE(Base)</div><div class="ttdoc">Define a global yaml factory for a base class.</div><div class="ttdef"><b>Definition:</b> <a href="yaml_8hpp_source.html#l00029">yaml.hpp:29</a></div></div>
 <div class="ttc" id="ayaml__fwd_8hpp_html"><div class="ttname"><a href="yaml__fwd_8hpp.html">yaml_fwd.hpp</a></div><div class="ttdoc">Yaml factory forward declarations.</div></div>
-<div class="ttc" id="ayaml__fwd_8hpp_html_a697e0ed10b585a1cfdb27a03c1df555e"><div class="ttname"><a href="yaml__fwd_8hpp.html#a697e0ed10b585a1cfdb27a03c1df555e">EZ_YAML_DECLARE</a></div><div class="ttdeci">#define EZ_YAML_DECLARE(Base)</div><div class="ttdoc">Declare a global yaml factory for a base class.</div><div class="ttdef"><b>Definition:</b> <a href="yaml__fwd_8hpp_source.html#l00055">yaml_fwd.hpp:55</a></div></div>
+<div class="ttc" id="ayaml__fwd_8hpp_html_a697e0ed10b585a1cfdb27a03c1df555e"><div class="ttname"><a href="yaml__fwd_8hpp.html#a697e0ed10b585a1cfdb27a03c1df555e">EZ_YAML_DECLARE</a></div><div class="ttdeci">#define EZ_YAML_DECLARE(Base)</div><div class="ttdoc">Declare a global yaml factory for a base class.</div><div class="ttdef"><b>Definition:</b> <a href="yaml__fwd_8hpp_source.html#l00057">yaml_fwd.hpp:57</a></div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
 Register json converter</h2>
 <p >Json conversion uses <a href="https://github.com/nlohmann/json"><code>nlohmann_json</code></a>.</p>
@@ -164,7 +164,7 @@ Register json converter</h2>
 <div class="line"> </div>
 <div class="line"><span class="comment">// In the implementation file</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="json_8hpp.html">ezconfig/json.hpp</a>&gt;</span></div>
-<div class="line">EZ_JSON_DEFINE(MyBase);</div>
+<div class="line"><a class="code hl_define" href="json_8hpp.html#a5e118d419adbe6370d0f37591c63e3f8">EZ_JSON_DEFINE</a>(MyBase);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// make Config struct parse-able from json</span></div>
 <div class="line"><span class="comment">// this can be automated with boost::hana</span></div>
@@ -177,9 +177,10 @@ Register json converter</h2>
 <div class="line"><span class="comment">// register a factory method with a tag via MyDerived::Config</span></div>
 <div class="line"><a class="code hl_define" href="json_8hpp.html#a45115e4b1d83052e94f26a982e44639a">EZ_JSON_REGISTER</a>(MyBase, <span class="stringliteral">&quot;mytag&quot;</span>, MyDerived, MyDerived::Config);</div>
 <div class="ttc" id="ajson_8hpp_html"><div class="ttname"><a href="json_8hpp.html">json.hpp</a></div><div class="ttdoc">Json factory.</div></div>
-<div class="ttc" id="ajson_8hpp_html_a45115e4b1d83052e94f26a982e44639a"><div class="ttname"><a href="json_8hpp.html#a45115e4b1d83052e94f26a982e44639a">EZ_JSON_REGISTER</a></div><div class="ttdeci">#define EZ_JSON_REGISTER(Base, tag, Derived,...)</div><div class="ttdoc">Register a tagged conversion with a json factory.</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l00037">json.hpp:37</a></div></div>
+<div class="ttc" id="ajson_8hpp_html_a45115e4b1d83052e94f26a982e44639a"><div class="ttname"><a href="json_8hpp.html#a45115e4b1d83052e94f26a982e44639a">EZ_JSON_REGISTER</a></div><div class="ttdeci">#define EZ_JSON_REGISTER(Base, tag, Derived,...)</div><div class="ttdoc">Register a tagged conversion with a json factory.</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l00053">json.hpp:53</a></div></div>
+<div class="ttc" id="ajson_8hpp_html_a5e118d419adbe6370d0f37591c63e3f8"><div class="ttname"><a href="json_8hpp.html#a5e118d419adbe6370d0f37591c63e3f8">EZ_JSON_DEFINE</a></div><div class="ttdeci">#define EZ_JSON_DEFINE(Base)</div><div class="ttdoc">Define a global json factory for a base class.</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l00029">json.hpp:29</a></div></div>
 <div class="ttc" id="ajson__fwd_8hpp_html"><div class="ttname"><a href="json__fwd_8hpp.html">json_fwd.hpp</a></div><div class="ttdoc">Json factory forward declarations.</div></div>
-<div class="ttc" id="ajson__fwd_8hpp_html_afdc4f8a0861513c0d2c09ef2ea80c604"><div class="ttname"><a href="json__fwd_8hpp.html#afdc4f8a0861513c0d2c09ef2ea80c604">EZ_JSON_DECLARE</a></div><div class="ttdeci">#define EZ_JSON_DECLARE(Base)</div><div class="ttdoc">Declare a json factory for a base class.</div><div class="ttdef"><b>Definition:</b> <a href="json__fwd_8hpp_source.html#l00047">json_fwd.hpp:47</a></div></div>
+<div class="ttc" id="ajson__fwd_8hpp_html_afdc4f8a0861513c0d2c09ef2ea80c604"><div class="ttname"><a href="json__fwd_8hpp.html#afdc4f8a0861513c0d2c09ef2ea80c604">EZ_JSON_DECLARE</a></div><div class="ttdeci">#define EZ_JSON_DECLARE(Base)</div><div class="ttdoc">Declare a json factory for a base class.</div><div class="ttdef"><b>Definition:</b> <a href="json__fwd_8hpp_source.html#l00050">json_fwd.hpp:50</a></div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
 TODOs</h1>
 <ul>

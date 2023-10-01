@@ -101,14 +101,14 @@ Include dependency graph for yaml.hpp:</div>
 <map name="ainclude_2ezconfig_2yaml_8hpp" id="ainclude_2ezconfig_2yaml_8hpp">
 <area shape="rect" title="Yaml factory." alt="" coords="110,5,279,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,120,104"/>
-<area shape="rect" href="factory_8hpp.html" title="Factory base class." alt="" coords="255,152,340,177"/>
+<area shape="rect" href="factory_8hpp.html" title="Factory base class." alt="" coords="240,152,325,177"/>
 <area shape="rect" href="yaml__fwd_8hpp.html" title="Yaml factory forward declarations." alt="" coords="144,79,245,104"/>
-<area shape="rect" title=" " alt="" coords="171,225,250,251"/>
-<area shape="rect" title=" " alt="" coords="274,225,321,251"/>
-<area shape="rect" title=" " alt="" coords="345,225,413,251"/>
-<area shape="rect" title=" " alt="" coords="437,225,507,251"/>
-<area shape="rect" href="global_8hpp.html" title="Utilities to define and maintain a global instance." alt="" coords="67,225,147,251"/>
-<area shape="rect" href="macro_8hpp_source.html" title=" " alt="" coords="148,152,231,177"/>
+<area shape="rect" title=" " alt="" coords="91,225,170,251"/>
+<area shape="rect" title=" " alt="" coords="194,225,241,251"/>
+<area shape="rect" title=" " alt="" coords="265,225,333,251"/>
+<area shape="rect" title=" " alt="" coords="357,225,427,251"/>
+<area shape="rect" href="global_8hpp.html" title="Utilities to define and maintain a global instance." alt="" coords="451,225,531,251"/>
+<area shape="rect" href="macro_8hpp_source.html" title=" " alt="" coords="119,152,201,177"/>
 </map>
 </div>
 </div>
@@ -160,8 +160,8 @@ requires ( std::is_base_of_v&lt;Base, Derived&gt; &amp;&amp; YamlParseable&lt;In
 <div class="line">  <span class="keyword">template</span> std::unique_ptr&lt;Base&gt; ezconfig::yaml::Create(<span class="keyword">const</span> YAML::Node &amp;); \</div>
 <div class="line">  <span class="keyword">template</span> <span class="keyword">struct </span><a class="code hl_struct" href="structYAML_1_1convert.html">YAML::convert&lt;std::shared_ptr&lt;Base&gt;</a>&gt;;                      \</div>
 <div class="line">  <span class="keyword">template</span> <span class="keyword">struct </span><a class="code hl_struct" href="structYAML_1_1convert.html">YAML::convert&lt;std::unique_ptr&lt;Base&gt;</a>&gt;</div>
-<div class="ttc" id="afactory_8hpp_html_a91f48a98fa790123a08f789e134f7893"><div class="ttname"><a href="factory_8hpp.html#a91f48a98fa790123a08f789e134f7893">EZ_FACTORY_DEFINE</a></div><div class="ttdeci">#define EZ_FACTORY_DEFINE(Base,...)</div><div class="ttdoc">Macro to define a global factory instance.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00069">factory.hpp:69</a></div></div>
-<div class="ttc" id="astructYAML_1_1convert_html"><div class="ttname"><a href="structYAML_1_1convert.html">YAML::convert</a></div><div class="ttdef"><b>Definition:</b> <a href="yaml__fwd_8hpp_source.html#l00020">yaml_fwd.hpp:20</a></div></div>
+<div class="ttc" id="afactory_8hpp_html_a91f48a98fa790123a08f789e134f7893"><div class="ttname"><a href="factory_8hpp.html#a91f48a98fa790123a08f789e134f7893">EZ_FACTORY_DEFINE</a></div><div class="ttdeci">#define EZ_FACTORY_DEFINE(Base,...)</div><div class="ttdoc">Define a global factory instance.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00082">factory.hpp:82</a></div></div>
+<div class="ttc" id="astructYAML_1_1convert_html"><div class="ttname"><a href="structYAML_1_1convert.html">YAML::convert</a></div><div class="ttdef"><b>Definition:</b> <a href="yaml__fwd_8hpp_source.html#l00019">yaml_fwd.hpp:19</a></div></div>
 </div><!-- fragment -->
 <p>Define a global yaml factory for a base class. </p>
 <p >Do this in the base class implementation file.</p>

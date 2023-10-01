@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ezconfig: Member List</title>
+<title>ezconfig: ezconfig::variant_hana_maps&lt; T &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -77,20 +77,42 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceYAML.html">YAML</a></li><li class="navelem"><a class="el" href="classYAML_1_1variant__tags_3_01std_1_1variant_3_01Ts_8_8_8_01_4_01_4.html">variant_tags&lt; std::variant&lt; Ts... &gt; &gt;</a></li>  </ul>
+<li class="navelem"><b>ezconfig</b></li><li class="navelem"><a class="el" href="structezconfig_1_1variant__hana__maps.html">variant_hana_maps</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="headertitle"><div class="title">YAML::variant_tags&lt; std::variant&lt; Ts... &gt; &gt; Member List</div></div>
+  <div class="headertitle"><div class="title">ezconfig::variant_hana_maps&lt; T &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="classYAML_1_1variant__tags_3_01std_1_1variant_3_01Ts_8_8_8_01_4_01_4.html">YAML::variant_tags&lt; std::variant&lt; Ts... &gt; &gt;</a>, including all inherited members.</p>
-<table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Add</b>(const std::string &amp;tag) (defined in <a class="el" href="classYAML_1_1variant__tags_3_01std_1_1variant_3_01Ts_8_8_8_01_4_01_4.html">YAML::variant_tags&lt; std::variant&lt; Ts... &gt; &gt;</a>)</td><td class="entry"><a class="el" href="classYAML_1_1variant__tags_3_01std_1_1variant_3_01Ts_8_8_8_01_4_01_4.html">YAML::variant_tags&lt; std::variant&lt; Ts... &gt; &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>TagToType</b>(const std::string &amp;tag) (defined in <a class="el" href="classYAML_1_1variant__tags_3_01std_1_1variant_3_01Ts_8_8_8_01_4_01_4.html">YAML::variant_tags&lt; std::variant&lt; Ts... &gt; &gt;</a>)</td><td class="entry"><a class="el" href="classYAML_1_1variant__tags_3_01std_1_1variant_3_01Ts_8_8_8_01_4_01_4.html">YAML::variant_tags&lt; std::variant&lt; Ts... &gt; &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>TypeToTag</b>() (defined in <a class="el" href="classYAML_1_1variant__tags_3_01std_1_1variant_3_01Ts_8_8_8_01_4_01_4.html">YAML::variant_tags&lt; std::variant&lt; Ts... &gt; &gt;</a>)</td><td class="entry"><a class="el" href="classYAML_1_1variant__tags_3_01std_1_1variant_3_01Ts_8_8_8_01_4_01_4.html">YAML::variant_tags&lt; std::variant&lt; Ts... &gt; &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
-</table></div><!-- contents -->
+<p>Type trait for std::variant&lt;&gt; yaml decoding.  
+ <a href="structezconfig_1_1variant__hana__maps.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="hana__fwd_8hpp_source.html">hana_fwd.hpp</a>&gt;</code></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+struct ezconfig::variant_hana_maps&lt; T &gt;</div><p >Type trait for std::variant&lt;&gt; yaml decoding. </p>
+<p >Specializations should define a member "value" that maps yaml tags to type instantiations.</p>
+<p >Example: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;boost/hana/tuple.hpp&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using </span>MyVariant = std::variant&lt;double, string, int&gt;;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Specialize type trait for MyVariant type</span></div>
+<div class="line"><span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><span class="keyword">struct </span><a class="code hl_struct" href="structezconfig_1_1variant__hana__maps.html">ezconfig::variant_hana_maps</a>&lt;MyVariant&gt;</div>
+<div class="line">{</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> value = boost::hana::make_tuple(</div>
+<div class="line">    boost::hana::make_pair(<span class="stringliteral">&quot;!double&quot;</span>, boost::hana::type_c&lt;double&gt;),</div>
+<div class="line">    boost::hana::make_pair(<span class="stringliteral">&quot;!int&quot;</span>, boost::hana::type_c&lt;int&gt;),</div>
+<div class="line">    boost::hana::make_pair(<span class="stringliteral">&quot;!string&quot;</span>, boost::hana::type_c&lt;std::string&gt;));</div>
+<div class="line">};</div>
+<div class="ttc" id="astructezconfig_1_1variant__hana__maps_html"><div class="ttname"><a href="structezconfig_1_1variant__hana__maps.html">ezconfig::variant_hana_maps</a></div><div class="ttdoc">Type trait for std::variant&lt;&gt; yaml decoding.</div><div class="ttdef"><b>Definition:</b> <a href="hana__fwd_8hpp_source.html#l00035">hana_fwd.hpp:36</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="hana__fwd_8hpp_source.html#l00035">35</a> of file <a class="el" href="hana__fwd_8hpp_source.html">hana_fwd.hpp</a>.</p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>include/ezconfig/yaml_types/<a class="el" href="hana__fwd_8hpp_source.html">hana_fwd.hpp</a></li>
+</ul>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5

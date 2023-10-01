@@ -130,22 +130,22 @@ $(function() {
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}  <span class="comment">// namespace ezconfig::yaml</span></div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Base&gt;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">template</span>&lt;ezconfig::yaml::Constructible Base&gt;</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keywordtype">bool</span> <a class="code hl_struct" href="structYAML_1_1convert.html">YAML::convert&lt;std::shared_ptr&lt;Base&gt;</a>&gt;::decode(<span class="keyword">const</span> YAML::Node &amp; y, std::shared_ptr&lt;Base&gt; &amp; ptr)</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>{</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  ptr = ::ezconfig::yaml::Create&lt;Base&gt;(y);</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Base&gt;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">template</span>&lt;ezconfig::yaml::Constructible Base&gt;</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keywordtype">bool</span> <a class="code hl_struct" href="structYAML_1_1convert.html">YAML::convert&lt;std::unique_ptr&lt;Base&gt;</a>&gt;::decode(<span class="keyword">const</span> YAML::Node &amp; y, std::unique_ptr&lt;Base&gt; &amp; ptr)</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>{</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  ptr = ::ezconfig::yaml::Create&lt;Base&gt;(y);</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}</div>
 <div class="ttc" id="afactory_8hpp_html"><div class="ttname"><a href="factory_8hpp.html">factory.hpp</a></div><div class="ttdoc">Factory base class.</div></div>
-<div class="ttc" id="afactory_8hpp_html_a393029049d6394a87f55701320b788b2"><div class="ttname"><a href="factory_8hpp.html#a393029049d6394a87f55701320b788b2">EZ_FACTORY_INSTANCE</a></div><div class="ttdeci">#define EZ_FACTORY_INSTANCE(Base,...)</div><div class="ttdoc">Macro to define a global factory instance.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00072">factory.hpp:72</a></div></div>
-<div class="ttc" id="astructYAML_1_1convert_html"><div class="ttname"><a href="structYAML_1_1convert.html">YAML::convert</a></div><div class="ttdef"><b>Definition:</b> <a href="yaml__fwd_8hpp_source.html#l00020">yaml_fwd.hpp:20</a></div></div>
+<div class="ttc" id="afactory_8hpp_html_a393029049d6394a87f55701320b788b2"><div class="ttname"><a href="factory_8hpp.html#a393029049d6394a87f55701320b788b2">EZ_FACTORY_INSTANCE</a></div><div class="ttdeci">#define EZ_FACTORY_INSTANCE(Base,...)</div><div class="ttdoc">Retrieve the global factory instance.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00085">factory.hpp:85</a></div></div>
+<div class="ttc" id="astructYAML_1_1convert_html"><div class="ttname"><a href="structYAML_1_1convert.html">YAML::convert</a></div><div class="ttdef"><b>Definition:</b> <a href="yaml__fwd_8hpp_source.html#l00019">yaml_fwd.hpp:19</a></div></div>
 <div class="ttc" id="ayaml__fwd_8hpp_html"><div class="ttname"><a href="yaml__fwd_8hpp.html">yaml_fwd.hpp</a></div><div class="ttdoc">Yaml factory forward declarations.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

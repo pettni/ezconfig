@@ -1,8 +1,8 @@
 <map id="include/ezconfig/global.hpp" name="include/ezconfig/global.hpp">
-<area shape="rect" id="node1" title="Utilities to define and maintain a global instance." alt="" coords="205,5,381,31"/>
-<area shape="rect" id="node2" href="$factory_8hpp.html" title="Factory base class." alt="" coords="138,79,319,104"/>
-<area shape="rect" id="node6" href="$yaml__fwd_8hpp.html" title="Yaml factory forward declarations." alt="" coords="284,152,429,192"/>
+<area shape="rect" id="node1" title="Utilities to define and maintain a global instance." alt="" coords="103,5,279,31"/>
+<area shape="rect" id="node2" href="$factory_8hpp.html" title="Factory base class." alt="" coords="101,79,282,104"/>
 <area shape="rect" id="node3" href="$json_8hpp.html" title="Json factory." alt="" coords="5,240,172,265"/>
 <area shape="rect" id="node4" href="$json__fwd_8hpp.html" title="Json factory forward declarations." alt="" coords="65,152,208,192"/>
 <area shape="rect" id="node5" href="$yaml_8hpp.html" title="Yaml factory." alt="" coords="209,240,379,265"/>
+<area shape="rect" id="node6" href="$yaml__fwd_8hpp.html" title="Yaml factory forward declarations." alt="" coords="284,152,429,192"/>
 </map>

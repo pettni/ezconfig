@@ -118,25 +118,27 @@ Include dependency graph for json.hpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a5e118d419adbe6370d0f37591c63e3f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="json_8hpp.html#a5e118d419adbe6370d0f37591c63e3f8">EZ_JSON_DEFINE</a>(Base)</td></tr>
+<tr class="memdesc:a5e118d419adbe6370d0f37591c63e3f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a global json factory for a base class.  <a href="json_8hpp.html#a5e118d419adbe6370d0f37591c63e3f8">More...</a><br /></td></tr>
 <tr class="separator:a5e118d419adbe6370d0f37591c63e3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45115e4b1d83052e94f26a982e44639a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="json_8hpp.html#a45115e4b1d83052e94f26a982e44639a">EZ_JSON_REGISTER</a>(Base,  tag,  Derived, ...)&#160;&#160;&#160;  EZ_STATIC_INVOKE(&amp;<a class="el" href="json_8hpp.html#a167e0e54cbeaf61a4288930f6b3a4c8e">ezconfig::json::Add</a>&lt;Base, Derived __VA_OPT__(, ) __VA_ARGS__&gt;, tag)</td></tr>
+<tr class="memitem:a45115e4b1d83052e94f26a982e44639a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="json_8hpp.html#a45115e4b1d83052e94f26a982e44639a">EZ_JSON_REGISTER</a>(Base,  tag,  Derived, ...)&#160;&#160;&#160;  EZ_STATIC_INVOKE(&amp;<a class="el" href="json_8hpp.html#a4173449aa946066a5f70e5d214b10eae">ezconfig::json::Add</a>&lt;Base, Derived __VA_OPT__(, ) __VA_ARGS__&gt;, tag)</td></tr>
 <tr class="memdesc:a45115e4b1d83052e94f26a982e44639a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a tagged conversion with a json factory.  <a href="json_8hpp.html#a45115e4b1d83052e94f26a982e44639a">More...</a><br /></td></tr>
 <tr class="separator:a45115e4b1d83052e94f26a982e44639a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a4173449aa946066a5f70e5d214b10eae"><td class="memTemplParams" colspan="2">template&lt;typename Base , typename Derived , typename Intermediate  = Derived&gt; <br />
+requires ( std::is_base_of_v&lt;Base, Derived&gt; &amp;&amp; JsonParseable&lt;Intermediate&gt; &amp;&amp; std::is_constructible_v&lt;Derived, Intermediate &amp;&amp;&gt;)</td></tr>
+<tr class="memitem:a4173449aa946066a5f70e5d214b10eae"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="json_8hpp.html#a4173449aa946066a5f70e5d214b10eae">ezconfig::json::Add</a> (const std::string &amp;tag)</td></tr>
+<tr class="memdesc:a4173449aa946066a5f70e5d214b10eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factory method.  <a href="json_8hpp.html#a4173449aa946066a5f70e5d214b10eae">More...</a><br /></td></tr>
+<tr class="separator:a4173449aa946066a5f70e5d214b10eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d5bfc9ccc6b391aa5c6b1cbc1bac7eb"><td class="memTemplParams" colspan="2">template&lt;typename Base &gt; </td></tr>
 <tr class="memitem:a1d5bfc9ccc6b391aa5c6b1cbc1bac7eb"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; Base &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="json_8hpp.html#a1d5bfc9ccc6b391aa5c6b1cbc1bac7eb">ezconfig::json::Create</a> (const nlohmann::json &amp;j)</td></tr>
 <tr class="memdesc:a1d5bfc9ccc6b391aa5c6b1cbc1bac7eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an object using the factory.  <a href="json_8hpp.html#a1d5bfc9ccc6b391aa5c6b1cbc1bac7eb">More...</a><br /></td></tr>
 <tr class="separator:a1d5bfc9ccc6b391aa5c6b1cbc1bac7eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a167e0e54cbeaf61a4288930f6b3a4c8e"><td class="memTemplParams" colspan="2">template&lt;typename Base , typename Derived , typename Intermediate &gt; <br />
-requires (std::is_base_of_v&lt;Base, Derived&gt; &amp;&amp; std::is_constructible_v&lt;Derived, Intermediate &amp;&amp;&gt;)</td></tr>
-<tr class="memitem:a167e0e54cbeaf61a4288930f6b3a4c8e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="json_8hpp.html#a167e0e54cbeaf61a4288930f6b3a4c8e">ezconfig::json::Add</a> (const std::string &amp;tag)</td></tr>
-<tr class="memdesc:a167e0e54cbeaf61a4288930f6b3a4c8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A JsonFactory creates objects in a class hierarchy from json.  <a href="json_8hpp.html#a167e0e54cbeaf61a4288930f6b3a4c8e">More...</a><br /></td></tr>
-<tr class="separator:a167e0e54cbeaf61a4288930f6b3a4c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Json factory. </p>
+<p >Include this file in implementation file for the base class and any derived classes. </p>
 
 <p class="definition">Definition in file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -159,9 +161,20 @@ requires (std::is_base_of_v&lt;Base, Derived&gt; &amp;&amp; std::is_constructibl
 <div class="line">  <span class="keyword">template</span> std::unique_ptr&lt;Base&gt; ezconfig::json::Create&lt;Base&gt;(<span class="keyword">const</span> nlohmann::json &amp;); \</div>
 <div class="line">  <span class="keyword">template</span> <span class="keyword">struct </span>nlohmann::adl_serializer&lt;std::shared_ptr&lt;Base&gt;&gt;;                     \</div>
 <div class="line">  <span class="keyword">template</span> <span class="keyword">struct </span>nlohmann::adl_serializer&lt;std::unique_ptr&lt;Base&gt;&gt;</div>
-<div class="ttc" id="afactory_8hpp_html_a91f48a98fa790123a08f789e134f7893"><div class="ttname"><a href="factory_8hpp.html#a91f48a98fa790123a08f789e134f7893">EZ_FACTORY_DEFINE</a></div><div class="ttdeci">#define EZ_FACTORY_DEFINE(Base,...)</div><div class="ttdoc">Macro to define a global factory instance.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00069">factory.hpp:69</a></div></div>
+<div class="ttc" id="afactory_8hpp_html_a91f48a98fa790123a08f789e134f7893"><div class="ttname"><a href="factory_8hpp.html#a91f48a98fa790123a08f789e134f7893">EZ_FACTORY_DEFINE</a></div><div class="ttdeci">#define EZ_FACTORY_DEFINE(Base,...)</div><div class="ttdoc">Define a global factory instance.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00082">factory.hpp:82</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00015">15</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p>Define a global json factory for a base class. </p>
+<p >Do this in the base class implementation file.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Base</td><td>factory base class.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Example: Define a <em>MyBase</em> yaml factory. </p><div class="fragment"><div class="line"><a class="code hl_define" href="yaml_8hpp.html#a6d9b3b08a3a99b4712e518226fe75e45">EZ_YAML_DEFINE</a>(MyBase);</div>
+<div class="ttc" id="ayaml_8hpp_html_a6d9b3b08a3a99b4712e518226fe75e45"><div class="ttname"><a href="yaml_8hpp.html#a6d9b3b08a3a99b4712e518226fe75e45">EZ_YAML_DEFINE</a></div><div class="ttdeci">#define EZ_YAML_DEFINE(Base)</div><div class="ttdoc">Define a global yaml factory for a base class.</div><div class="ttdef"><b>Definition:</b> <a href="yaml_8hpp_source.html#l00029">yaml.hpp:29</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00029">29</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
@@ -198,12 +211,13 @@ requires (std::is_base_of_v&lt;Base, Derived&gt; &amp;&amp; std::is_constructibl
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;  EZ_STATIC_INVOKE(&amp;<a class="el" href="json_8hpp.html#a167e0e54cbeaf61a4288930f6b3a4c8e">ezconfig::json::Add</a>&lt;Base, Derived __VA_OPT__(, ) __VA_ARGS__&gt;, tag)</td>
+          <td></td><td>&#160;&#160;&#160;  EZ_STATIC_INVOKE(&amp;<a class="el" href="json_8hpp.html#a4173449aa946066a5f70e5d214b10eae">ezconfig::json::Add</a>&lt;Base, Derived __VA_OPT__(, ) __VA_ARGS__&gt;, tag)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Register a tagged conversion with a json factory. </p>
+<p >Do this in the implementation files for derived classes.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Base</td><td>factory base class. </td></tr>
@@ -217,21 +231,21 @@ requires (std::is_base_of_v&lt;Base, Derived&gt; &amp;&amp; std::is_constructibl
 <dd>
 If provided, Intermediate must be a json-parsable type.</dd></dl>
 <p>Example: Register a creator for <em>MyDerived</em> with tag "mytag". </p><div class="fragment"><div class="line"><a class="code hl_define" href="json_8hpp.html#a45115e4b1d83052e94f26a982e44639a">EZ_JSON_REGISTER</a>(MyBase, <span class="stringliteral">&quot;mytag&quot;</span>, MyDerived, MyDerivedConfig);</div>
-<div class="ttc" id="ajson_8hpp_html_a45115e4b1d83052e94f26a982e44639a"><div class="ttname"><a href="json_8hpp.html#a45115e4b1d83052e94f26a982e44639a">EZ_JSON_REGISTER</a></div><div class="ttdeci">#define EZ_JSON_REGISTER(Base, tag, Derived,...)</div><div class="ttdoc">Register a tagged conversion with a json factory.</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l00037">json.hpp:37</a></div></div>
+<div class="ttc" id="ajson_8hpp_html_a45115e4b1d83052e94f26a982e44639a"><div class="ttname"><a href="json_8hpp.html#a45115e4b1d83052e94f26a982e44639a">EZ_JSON_REGISTER</a></div><div class="ttdeci">#define EZ_JSON_REGISTER(Base, tag, Derived,...)</div><div class="ttdoc">Register a tagged conversion with a json factory.</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l00053">json.hpp:53</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00037">37</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00053">53</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a167e0e54cbeaf61a4288930f6b3a4c8e" name="a167e0e54cbeaf61a4288930f6b3a4c8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a167e0e54cbeaf61a4288930f6b3a4c8e">&#9670;&#160;</a></span>Add()</h2>
+<a id="a4173449aa946066a5f70e5d214b10eae" name="a4173449aa946066a5f70e5d214b10eae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4173449aa946066a5f70e5d214b10eae">&#9670;&#160;</a></span>Add()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , typename Derived , typename Intermediate &gt; <br />
-requires (std::is_base_of_v&lt;Base, Derived&gt; &amp;&amp; std::is_constructible_v&lt;Derived, Intermediate &amp;&amp;&gt;)</div>
+template&lt;typename Base , typename Derived , typename Intermediate  = Derived&gt; <br />
+requires ( std::is_base_of_v&lt;Base, Derived&gt; &amp;&amp; JsonParseable&lt;Intermediate&gt; &amp;&amp; std::is_constructible_v&lt;Derived, Intermediate &amp;&amp;&gt;)</div>
       <table class="memname">
         <tr>
           <td class="memname">void ezconfig::json::Add </td>
@@ -243,9 +257,19 @@ requires (std::is_base_of_v&lt;Base, Derived&gt; &amp;&amp; std::is_constructibl
       </table>
 </div><div class="memdoc">
 
-<p>A JsonFactory creates objects in a class hierarchy from json. </p>
+<p>Add a factory method. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Derived</td><td>sub-class of Base. </td></tr>
+    <tr><td class="paramname">Intermediate</td><td>type that is parseable from json, and that can construct Derived.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Adds conversions from yaml of the form</p>
+<p >!tag object</p>
+<p >to Derived, where object is yaml-converted to Intermediate. </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00063">63</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00082">82</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
@@ -282,7 +306,7 @@ template&lt;typename Base &gt; </div>
 </dl>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> obj = JsonCreate&lt;MyBase&gt;(nlohmann::json::parse(data));</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00050">50</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l00089">89</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
