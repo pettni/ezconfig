@@ -2,7 +2,9 @@
 
 #pragma once
 
+#include <smooth/se2.hpp>
 #include <smooth/se3.hpp>
+#include <smooth/so2.hpp>
 #include <smooth/so3.hpp>
 
 namespace YAML {
@@ -12,6 +14,53 @@ template<typename T>
 struct convert;
 
 class Node;
+
+/**
+ * @brief Decode so2 from yaml.
+ *
+ * Supported formats
+ *
+ * Format 1: <floating>   [angle in radians]
+ *
+ * Format 2:
+ *   qw: <floating>
+ *   qz: <floating>
+ *
+ * Format 3:
+ *   w: <floating>
+ *   z: <floating>
+ */
+template<typename T>
+struct convert<smooth::SO2<T>>
+{
+  static bool decode(const Node & yaml, smooth::SO2<T> & obj);
+};
+
+/**
+ * @brief Decode se2 from yaml.
+ *
+ * Supported formats
+ *
+ * Format 1:
+ *   x: <floating>
+ *   y: <floating>
+ *   yaw: <floating>  [radians]
+ *
+ * Format 2:
+ *   x: <floating>
+ *   y: <floating>
+ *   qw: <floating>
+ *   qz: <floating>
+ *
+ * Format 3:
+ *   translation: <vec2>
+ *   orientation: <so2>
+ */
+template<typename T>
+struct convert<smooth::SE2<T>>
+{
+  static bool decode(const Node & yaml, smooth::SE2<T> & obj);
+};
 
 /**
  * @brief Decode an enum from yaml.
