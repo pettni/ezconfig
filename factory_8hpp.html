@@ -84,7 +84,8 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#concepts">Concepts</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle"><div class="title">factory.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -126,10 +127,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory&lt; Base, Args &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classezconfig_1_1Factory.html" title="A Factory creates objects in a class hierarchy.">Factory</a> creates objects in a class hierarchy.  <a href="classezconfig_1_1Factory.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezconfig_1_1GeneralFactory.html">ezconfig::GeneralFactory&lt; many, Base, Args &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Factory creates objects in a class hierarchy.  <a href="classezconfig_1_1GeneralFactory.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structezconfig_1_1has__factory.html">ezconfig::has_factory&lt; Base, Args &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structezconfig_1_1has__factory.html">ezconfig::has_factory&lt; many, Base, Args &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type trait that marks existing factories.  <a href="structezconfig_1_1has__factory.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -138,21 +139,43 @@ Concepts</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptezconfig_1_1Constructible.html">ezconfig::Constructible</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concept that identifies existing factories. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptezconfig_1_1ManyConstructible.html">ezconfig::ManyConstructible</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concept that identifies existing factories. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a1405f6acb439602b700820af56b48e72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#a1405f6acb439602b700820af56b48e72">EZ_FACTORY_DECLARE</a>(Base, ...)</td></tr>
-<tr class="memdesc:a1405f6acb439602b700820af56b48e72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declare a global factory instance.  <a href="factory_8hpp.html#a1405f6acb439602b700820af56b48e72">More...</a><br /></td></tr>
+<tr class="memitem:aa6dd48e55fc7a5dbf60fa78c0a6be9f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#aa6dd48e55fc7a5dbf60fa78c0a6be9f6">EZ_GENERAL_FACTORY_DECLARE</a>(many,  Base, ...)</td></tr>
+<tr class="memdesc:aa6dd48e55fc7a5dbf60fa78c0a6be9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declare a global factory instance.  <a href="factory_8hpp.html#aa6dd48e55fc7a5dbf60fa78c0a6be9f6">More...</a><br /></td></tr>
+<tr class="separator:aa6dd48e55fc7a5dbf60fa78c0a6be9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc8998aa6ff8f842cf0b40eabbbd8ef6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#afc8998aa6ff8f842cf0b40eabbbd8ef6">EZ_GENERAL_FACTORY_DEFINE</a>(many,  Base, ...)&#160;&#160;&#160;  <a class="el" href="global_8hpp.html#ab1bfb411459abacd66e0474d61056d95">EZ_GLOBAL_DEFINE</a>(<a class="el" href="classezconfig_1_1GeneralFactory.html">ezconfig::GeneralFactory</a>&lt;many, Base __VA_OPT__(, ) __VA_ARGS__&gt;)</td></tr>
+<tr class="memdesc:afc8998aa6ff8f842cf0b40eabbbd8ef6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a global factory instance.  <a href="factory_8hpp.html#afc8998aa6ff8f842cf0b40eabbbd8ef6">More...</a><br /></td></tr>
+<tr class="separator:afc8998aa6ff8f842cf0b40eabbbd8ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e2a5f1265a2ac3c53f3ee30211ba0fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#a9e2a5f1265a2ac3c53f3ee30211ba0fa">EZ_GENERAL_FACTORY_INSTANCE</a>(many,  Base, ...)&#160;&#160;&#160;  <a class="el" href="global_8hpp.html#ad325988ac1aa36a52a7f22ce11b3786a">EZ_GLOBAL_INSTANCE</a>(<a class="el" href="classezconfig_1_1GeneralFactory.html">ezconfig::GeneralFactory</a>&lt;many, Base __VA_OPT__(, ) __VA_ARGS__&gt;)</td></tr>
+<tr class="memdesc:a9e2a5f1265a2ac3c53f3ee30211ba0fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the global factory instance.  <a href="factory_8hpp.html#a9e2a5f1265a2ac3c53f3ee30211ba0fa">More...</a><br /></td></tr>
+<tr class="separator:a9e2a5f1265a2ac3c53f3ee30211ba0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebd361a3540ff051be60eec0139958fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#aebd361a3540ff051be60eec0139958fe">EZ_GENERAL_FACTORY_REGISTER</a>(many,  tag,  creator,  Base, ...)</td></tr>
+<tr class="memdesc:aebd361a3540ff051be60eec0139958fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a tag and creator method in the global factory instance.  <a href="factory_8hpp.html#aebd361a3540ff051be60eec0139958fe">More...</a><br /></td></tr>
+<tr class="separator:aebd361a3540ff051be60eec0139958fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1405f6acb439602b700820af56b48e72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#a1405f6acb439602b700820af56b48e72">EZ_FACTORY_DECLARE</a>(Base, ...)&#160;&#160;&#160;<a class="el" href="factory_8hpp.html#aa6dd48e55fc7a5dbf60fa78c0a6be9f6">EZ_GENERAL_FACTORY_DECLARE</a>(false, Base, __VA_ARGS__)</td></tr>
 <tr class="separator:a1405f6acb439602b700820af56b48e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91f48a98fa790123a08f789e134f7893"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#a91f48a98fa790123a08f789e134f7893">EZ_FACTORY_DEFINE</a>(Base, ...)&#160;&#160;&#160;<a class="el" href="global_8hpp.html#ab1bfb411459abacd66e0474d61056d95">EZ_GLOBAL_DEFINE</a>(<a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory</a>&lt;Base __VA_OPT__(, ) __VA_ARGS__&gt;)</td></tr>
-<tr class="memdesc:a91f48a98fa790123a08f789e134f7893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a global factory instance.  <a href="factory_8hpp.html#a91f48a98fa790123a08f789e134f7893">More...</a><br /></td></tr>
+<tr class="memitem:a91f48a98fa790123a08f789e134f7893"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#a91f48a98fa790123a08f789e134f7893">EZ_FACTORY_DEFINE</a>(Base, ...)&#160;&#160;&#160;<a class="el" href="factory_8hpp.html#afc8998aa6ff8f842cf0b40eabbbd8ef6">EZ_GENERAL_FACTORY_DEFINE</a>(false, Base, __VA_ARGS__)</td></tr>
 <tr class="separator:a91f48a98fa790123a08f789e134f7893"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a393029049d6394a87f55701320b788b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#a393029049d6394a87f55701320b788b2">EZ_FACTORY_INSTANCE</a>(Base, ...)&#160;&#160;&#160;<a class="el" href="global_8hpp.html#ad325988ac1aa36a52a7f22ce11b3786a">EZ_GLOBAL_INSTANCE</a>(<a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory</a>&lt;Base __VA_OPT__(, ) __VA_ARGS__&gt;)</td></tr>
-<tr class="memdesc:a393029049d6394a87f55701320b788b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the global factory instance.  <a href="factory_8hpp.html#a393029049d6394a87f55701320b788b2">More...</a><br /></td></tr>
+<tr class="memitem:a393029049d6394a87f55701320b788b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#a393029049d6394a87f55701320b788b2">EZ_FACTORY_INSTANCE</a>(Base, ...)&#160;&#160;&#160;<a class="el" href="factory_8hpp.html#a9e2a5f1265a2ac3c53f3ee30211ba0fa">EZ_GENERAL_FACTORY_INSTANCE</a>(false, Base, __VA_ARGS__)</td></tr>
 <tr class="separator:a393029049d6394a87f55701320b788b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af86709def8022e4e31314075c708e904"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#af86709def8022e4e31314075c708e904">EZ_FACTORY_REGISTER</a>(tag,  creator,  Base, ...)</td></tr>
-<tr class="memdesc:af86709def8022e4e31314075c708e904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a tag and creator method in the global factory instance.  <a href="factory_8hpp.html#af86709def8022e4e31314075c708e904">More...</a><br /></td></tr>
+<tr class="memitem:af86709def8022e4e31314075c708e904"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#af86709def8022e4e31314075c708e904">EZ_FACTORY_REGISTER</a>(tag,  creator,  Base, ...)&#160;&#160;&#160;<a class="el" href="factory_8hpp.html#aebd361a3540ff051be60eec0139958fe">EZ_GENERAL_FACTORY_REGISTER</a>(false, tag, creator, Base, __VA_ARGS__)</td></tr>
 <tr class="separator:af86709def8022e4e31314075c708e904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a94bde65f250596c25d6b6da8b97ef186"><td class="memTemplParams" colspan="2">template&lt;typename Base , typename... Args&gt; </td></tr>
+<tr class="memitem:a94bde65f250596c25d6b6da8b97ef186"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#a94bde65f250596c25d6b6da8b97ef186">ezconfig::Factory</a> = GeneralFactory&lt; false, Base, Args... &gt;</td></tr>
+<tr class="memdesc:a94bde65f250596c25d6b6da8b97ef186"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory that creates a single instance.  <a href="factory_8hpp.html#a94bde65f250596c25d6b6da8b97ef186">More...</a><br /></td></tr>
+<tr class="separator:a94bde65f250596c25d6b6da8b97ef186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34daaa1224a4496b76def8b74f2a8809"><td class="memTemplParams" colspan="2">template&lt;typename Base , typename... Args&gt; </td></tr>
+<tr class="memitem:a34daaa1224a4496b76def8b74f2a8809"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="factory_8hpp.html#a34daaa1224a4496b76def8b74f2a8809">ezconfig::ManyFactory</a> = GeneralFactory&lt; false, Base, Args... &gt;</td></tr>
+<tr class="memdesc:a34daaa1224a4496b76def8b74f2a8809"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory that creates a vector of instances.  <a href="factory_8hpp.html#a34daaa1224a4496b76def8b74f2a8809">More...</a><br /></td></tr>
+<tr class="separator:a34daaa1224a4496b76def8b74f2a8809"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Factory base class. </p>
@@ -180,21 +203,12 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="factory_8hpp.html#aa6dd48e55fc7a5dbf60fa78c0a6be9f6">EZ_GENERAL_FACTORY_DECLARE</a>(false, Base, __VA_ARGS__)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="global_8hpp.html#addf1571c436c24e2c1da374ea31fccc0">EZ_GLOBAL_DECLARE</a>(<a class="code hl_class" href="classezconfig_1_1Factory.html">ezconfig::Factory</a>&lt;Base __VA_OPT__(, ) __VA_ARGS__&gt;);                \</div>
-<div class="line">  <span class="keyword">template</span>&lt;&gt;                                                                            \</div>
-<div class="line">  <span class="keyword">struct </span><a class="code hl_struct" href="structezconfig_1_1has__factory.html">ezconfig::has_factory</a>&lt;Base __VA_OPT__(, ) __VA_ARGS__&gt; : <span class="keyword">public</span> std::true_type \</div>
-<div class="line">  {}</div>
-<div class="ttc" id="aclassezconfig_1_1Factory_html"><div class="ttname"><a href="classezconfig_1_1Factory.html">ezconfig::Factory</a></div><div class="ttdoc">A Factory creates objects in a class hierarchy.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00026">factory.hpp:27</a></div></div>
-<div class="ttc" id="aglobal_8hpp_html_addf1571c436c24e2c1da374ea31fccc0"><div class="ttname"><a href="global_8hpp.html#addf1571c436c24e2c1da374ea31fccc0">EZ_GLOBAL_DECLARE</a></div><div class="ttdeci">#define EZ_GLOBAL_DECLARE(...)</div><div class="ttdoc">Declare a template specialization of gInstance.</div><div class="ttdef"><b>Definition:</b> <a href="global_8hpp_source.html#l00029">global.hpp:29</a></div></div>
-<div class="ttc" id="astructezconfig_1_1has__factory_html"><div class="ttname"><a href="structezconfig_1_1has__factory.html">ezconfig::has_factory</a></div><div class="ttdoc">Type trait that marks existing factories.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00067">factory.hpp:68</a></div></div>
-</div><!-- fragment -->
-<p>Declare a global factory instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00075">75</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00120">120</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
 
 </div>
 </div>
@@ -219,14 +233,12 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="global_8hpp.html#ab1bfb411459abacd66e0474d61056d95">EZ_GLOBAL_DEFINE</a>(<a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory</a>&lt;Base __VA_OPT__(, ) __VA_ARGS__&gt;)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="factory_8hpp.html#afc8998aa6ff8f842cf0b40eabbbd8ef6">EZ_GENERAL_FACTORY_DEFINE</a>(false, Base, __VA_ARGS__)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Define a global factory instance. </p>
-
-<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00082">82</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00121">121</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
 
 </div>
 </div>
@@ -251,14 +263,12 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="global_8hpp.html#ad325988ac1aa36a52a7f22ce11b3786a">EZ_GLOBAL_INSTANCE</a>(<a class="el" href="classezconfig_1_1Factory.html">ezconfig::Factory</a>&lt;Base __VA_OPT__(, ) __VA_ARGS__&gt;)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="factory_8hpp.html#a9e2a5f1265a2ac3c53f3ee30211ba0fa">EZ_GENERAL_FACTORY_INSTANCE</a>(false, Base, __VA_ARGS__)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retrieve the global factory instance. </p>
-
-<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00085">85</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00122">122</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
 
 </div>
 </div>
@@ -295,17 +305,230 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="factory_8hpp.html#aebd361a3540ff051be60eec0139958fe">EZ_GENERAL_FACTORY_REGISTER</a>(false, tag, creator, Base, __VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00123">123</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa6dd48e55fc7a5dbf60fa78c0a6be9f6" name="aa6dd48e55fc7a5dbf60fa78c0a6be9f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6dd48e55fc7a5dbf60fa78c0a6be9f6">&#9670;&#160;</a></span>EZ_GENERAL_FACTORY_DECLARE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EZ_GENERAL_FACTORY_DECLARE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">many, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Base, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
           <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  EZ_STATIC_INVOKE(                                  \</div>
-<div class="line">    &amp;<a class="code hl_class" href="classezconfig_1_1Factory.html">ezconfig::Factory</a>&lt;Base __VA_OPT__(, ) __VA_ARGS__&gt;::add, <a class="code hl_define" href="factory_8hpp.html#a393029049d6394a87f55701320b788b2">EZ_FACTORY_INSTANCE</a>(Base, __VA_ARGS__), tag, creator);</div>
-<div class="ttc" id="afactory_8hpp_html_a393029049d6394a87f55701320b788b2"><div class="ttname"><a href="factory_8hpp.html#a393029049d6394a87f55701320b788b2">EZ_FACTORY_INSTANCE</a></div><div class="ttdeci">#define EZ_FACTORY_INSTANCE(Base,...)</div><div class="ttdoc">Retrieve the global factory instance.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00085">factory.hpp:85</a></div></div>
+<b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="global_8hpp.html#addf1571c436c24e2c1da374ea31fccc0">EZ_GLOBAL_DECLARE</a>(<a class="code hl_class" href="classezconfig_1_1GeneralFactory.html">ezconfig::GeneralFactory</a>&lt;many, Base __VA_OPT__(, ) __VA_ARGS__&gt;);         \</div>
+<div class="line">  <span class="keyword">template</span>&lt;&gt;                                                                                  \</div>
+<div class="line">  <span class="keyword">struct </span><a class="code hl_struct" href="structezconfig_1_1has__factory.html">ezconfig::has_factory</a>&lt;many, Base __VA_OPT__(, ) __VA_ARGS__&gt; : <span class="keyword">public</span> std::true_type \</div>
+<div class="line">  {}</div>
+<div class="ttc" id="aclassezconfig_1_1GeneralFactory_html"><div class="ttname"><a href="classezconfig_1_1GeneralFactory.html">ezconfig::GeneralFactory</a></div><div class="ttdoc">A Factory creates objects in a class hierarchy.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00030">factory.hpp:31</a></div></div>
+<div class="ttc" id="aglobal_8hpp_html_addf1571c436c24e2c1da374ea31fccc0"><div class="ttname"><a href="global_8hpp.html#addf1571c436c24e2c1da374ea31fccc0">EZ_GLOBAL_DECLARE</a></div><div class="ttdeci">#define EZ_GLOBAL_DECLARE(...)</div><div class="ttdoc">Declare a template specialization of gInstance.</div><div class="ttdef"><b>Definition:</b> <a href="global_8hpp_source.html#l00029">global.hpp:29</a></div></div>
+<div class="ttc" id="astructezconfig_1_1has__factory_html"><div class="ttname"><a href="structezconfig_1_1has__factory.html">ezconfig::has_factory</a></div><div class="ttdoc">Type trait that marks existing factories.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00086">factory.hpp:87</a></div></div>
+</div><!-- fragment -->
+<p>Declare a global factory instance. </p>
+
+<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00098">98</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
+
+</div>
+</div>
+<a id="afc8998aa6ff8f842cf0b40eabbbd8ef6" name="afc8998aa6ff8f842cf0b40eabbbd8ef6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc8998aa6ff8f842cf0b40eabbbd8ef6">&#9670;&#160;</a></span>EZ_GENERAL_FACTORY_DEFINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EZ_GENERAL_FACTORY_DEFINE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">many, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Base, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;  <a class="el" href="global_8hpp.html#ab1bfb411459abacd66e0474d61056d95">EZ_GLOBAL_DEFINE</a>(<a class="el" href="classezconfig_1_1GeneralFactory.html">ezconfig::GeneralFactory</a>&lt;many, Base __VA_OPT__(, ) __VA_ARGS__&gt;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define a global factory instance. </p>
+
+<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00105">105</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9e2a5f1265a2ac3c53f3ee30211ba0fa" name="a9e2a5f1265a2ac3c53f3ee30211ba0fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e2a5f1265a2ac3c53f3ee30211ba0fa">&#9670;&#160;</a></span>EZ_GENERAL_FACTORY_INSTANCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EZ_GENERAL_FACTORY_INSTANCE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">many, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Base, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;  <a class="el" href="global_8hpp.html#ad325988ac1aa36a52a7f22ce11b3786a">EZ_GLOBAL_INSTANCE</a>(<a class="el" href="classezconfig_1_1GeneralFactory.html">ezconfig::GeneralFactory</a>&lt;many, Base __VA_OPT__(, ) __VA_ARGS__&gt;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve the global factory instance. </p>
+
+<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00109">109</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aebd361a3540ff051be60eec0139958fe" name="aebd361a3540ff051be60eec0139958fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebd361a3540ff051be60eec0139958fe">&#9670;&#160;</a></span>EZ_GENERAL_FACTORY_REGISTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EZ_GENERAL_FACTORY_REGISTER</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">many, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tag, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">creator, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Base, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  EZ_STATIC_INVOKE(                                                        \</div>
+<div class="line">    &amp;<a class="code hl_class" href="classezconfig_1_1GeneralFactory.html">ezconfig::GeneralFactory</a>&lt;many, Base __VA_OPT__(, ) __VA_ARGS__&gt;::add, \</div>
+<div class="line">    <a class="code hl_define" href="factory_8hpp.html#a9e2a5f1265a2ac3c53f3ee30211ba0fa">EZ_GENERAL_FACTORY_INSTANCE</a>(many, Base, __VA_ARGS__),                  \</div>
+<div class="line">    tag,                                                                   \</div>
+<div class="line">    creator)</div>
+<div class="ttc" id="afactory_8hpp_html_a9e2a5f1265a2ac3c53f3ee30211ba0fa"><div class="ttname"><a href="factory_8hpp.html#a9e2a5f1265a2ac3c53f3ee30211ba0fa">EZ_GENERAL_FACTORY_INSTANCE</a></div><div class="ttdeci">#define EZ_GENERAL_FACTORY_INSTANCE(many, Base,...)</div><div class="ttdoc">Retrieve the global factory instance.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00109">factory.hpp:109</a></div></div>
 </div><!-- fragment -->
 <p>Register a tag and creator method in the global factory instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00088">88</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00113">113</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a94bde65f250596c25d6b6da8b97ef186" name="a94bde65f250596c25d6b6da8b97ef186"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94bde65f250596c25d6b6da8b97ef186">&#9670;&#160;</a></span>Factory</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Base , typename... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="factory_8hpp.html#a94bde65f250596c25d6b6da8b97ef186">ezconfig::Factory</a> = typedef GeneralFactory&lt;false, Base, Args...&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A factory that creates a single instance. </p>
+
+<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00076">76</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a34daaa1224a4496b76def8b74f2a8809" name="a34daaa1224a4496b76def8b74f2a8809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34daaa1224a4496b76def8b74f2a8809">&#9670;&#160;</a></span>ManyFactory</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Base , typename... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="factory_8hpp.html#a34daaa1224a4496b76def8b74f2a8809">ezconfig::ManyFactory</a> = typedef GeneralFactory&lt;false, Base, Args...&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A factory that creates a vector of instances. </p>
+
+<p class="definition">Definition at line <a class="el" href="factory_8hpp_source.html#l00082">82</a> of file <a class="el" href="factory_8hpp_source.html">factory.hpp</a>.</p>
 
 </div>
 </div>

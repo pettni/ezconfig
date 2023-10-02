@@ -1,4 +1,4 @@
-<map id="ezconfig::has_factory&lt; Base, Args &gt;" name="ezconfig::has_factory&lt; Base, Args &gt;">
-<area shape="rect" id="node1" title="Type trait that marks existing factories." alt="" coords="5,79,148,119"/>
-<area shape="rect" id="node2" title=" " alt="" coords="24,5,129,31"/>
+<map id="ezconfig::has_factory&lt; many, Base, Args &gt;" name="ezconfig::has_factory&lt; many, Base, Args &gt;">
+<area shape="rect" id="node1" title="Type trait that marks existing factories." alt="" coords="5,79,152,119"/>
+<area shape="rect" id="node2" title=" " alt="" coords="26,5,131,31"/>
 </map>

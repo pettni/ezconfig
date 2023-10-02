@@ -119,13 +119,13 @@ $(function() {
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>{</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordflow">if</span> (tag.size() &lt; 2 || tag[0] != <span class="charliteral">&#39;!&#39;</span>) { <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;yaml tag must start with !&quot;</span>); }</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keyword">auto</span> creator = [](<span class="keyword">const</span> YAML::Node &amp; y) { <span class="keywordflow">return</span> std::make_unique&lt;Derived&gt;(y.as&lt;Intermediate&gt;()); };</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <a class="code hl_define" href="factory_8hpp.html#a393029049d6394a87f55701320b788b2">EZ_FACTORY_INSTANCE</a>(Base, <span class="keyword">const</span> YAML::Node &amp;).add(tag, std::move(creator));</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  EZ_FACTORY_INSTANCE(Base, <span class="keyword">const</span> YAML::Node &amp;).add(tag, std::move(creator));</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Base&gt;</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="yaml_8hpp.html#af46042af966c884dfd82711e13d207ad">   90</a></span>std::unique_ptr&lt;Base&gt; Create(<span class="keyword">const</span> YAML::Node &amp; y)</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>{</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordflow">return</span> <a class="code hl_define" href="factory_8hpp.html#a393029049d6394a87f55701320b788b2">EZ_FACTORY_INSTANCE</a>(Base, <span class="keyword">const</span> YAML::Node &amp;).create(y.Tag(), y);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordflow">return</span> EZ_FACTORY_INSTANCE(Base, <span class="keyword">const</span> YAML::Node &amp;).create(y.Tag(), y);</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}  <span class="comment">// namespace ezconfig::yaml</span></div>
@@ -144,7 +144,6 @@ $(function() {
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}</div>
 <div class="ttc" id="afactory_8hpp_html"><div class="ttname"><a href="factory_8hpp.html">factory.hpp</a></div><div class="ttdoc">Factory base class.</div></div>
-<div class="ttc" id="afactory_8hpp_html_a393029049d6394a87f55701320b788b2"><div class="ttname"><a href="factory_8hpp.html#a393029049d6394a87f55701320b788b2">EZ_FACTORY_INSTANCE</a></div><div class="ttdeci">#define EZ_FACTORY_INSTANCE(Base,...)</div><div class="ttdoc">Retrieve the global factory instance.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00085">factory.hpp:85</a></div></div>
 <div class="ttc" id="astructYAML_1_1convert_html"><div class="ttname"><a href="structYAML_1_1convert.html">YAML::convert</a></div><div class="ttdef"><b>Definition:</b> <a href="yaml__fwd_8hpp_source.html#l00019">yaml_fwd.hpp:19</a></div></div>
 <div class="ttc" id="ayaml__fwd_8hpp_html"><div class="ttname"><a href="yaml__fwd_8hpp.html">yaml_fwd.hpp</a></div><div class="ttdoc">Yaml factory forward declarations.</div></div>
 </div><!-- fragment --></div><!-- contents -->

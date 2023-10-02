@@ -156,11 +156,10 @@ requires ( std::is_base_of_v&lt;Base, Derived&gt; &amp;&amp; YamlParseable&lt;In
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="factory_8hpp.html#a91f48a98fa790123a08f789e134f7893">EZ_FACTORY_DEFINE</a>(Base, <span class="keyword">const</span> YAML::Node &amp;);                               \</div>
+<b>Value:</b><div class="fragment"><div class="line">  EZ_FACTORY_DEFINE(Base, <span class="keyword">const</span> YAML::Node &amp;);                               \</div>
 <div class="line">  <span class="keyword">template</span> std::unique_ptr&lt;Base&gt; ezconfig::yaml::Create(<span class="keyword">const</span> YAML::Node &amp;); \</div>
 <div class="line">  <span class="keyword">template</span> <span class="keyword">struct </span><a class="code hl_struct" href="structYAML_1_1convert.html">YAML::convert&lt;std::shared_ptr&lt;Base&gt;</a>&gt;;                      \</div>
 <div class="line">  <span class="keyword">template</span> <span class="keyword">struct </span><a class="code hl_struct" href="structYAML_1_1convert.html">YAML::convert&lt;std::unique_ptr&lt;Base&gt;</a>&gt;</div>
-<div class="ttc" id="afactory_8hpp_html_a91f48a98fa790123a08f789e134f7893"><div class="ttname"><a href="factory_8hpp.html#a91f48a98fa790123a08f789e134f7893">EZ_FACTORY_DEFINE</a></div><div class="ttdeci">#define EZ_FACTORY_DEFINE(Base,...)</div><div class="ttdoc">Define a global factory instance.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00082">factory.hpp:82</a></div></div>
 <div class="ttc" id="astructYAML_1_1convert_html"><div class="ttname"><a href="structYAML_1_1convert.html">YAML::convert</a></div><div class="ttdef"><b>Definition:</b> <a href="yaml__fwd_8hpp_source.html#l00019">yaml_fwd.hpp:19</a></div></div>
 </div><!-- fragment -->
 <p>Define a global yaml factory for a base class. </p>

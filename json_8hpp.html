@@ -157,11 +157,10 @@ requires ( std::is_base_of_v&lt;Base, Derived&gt; &amp;&amp; JsonParseable&lt;In
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="factory_8hpp.html#a91f48a98fa790123a08f789e134f7893">EZ_FACTORY_DEFINE</a>(Base, <span class="keyword">const</span> nlohmann::json &amp;);                                     \</div>
+<b>Value:</b><div class="fragment"><div class="line">  EZ_FACTORY_DEFINE(Base, <span class="keyword">const</span> nlohmann::json &amp;);                                     \</div>
 <div class="line">  <span class="keyword">template</span> std::unique_ptr&lt;Base&gt; ezconfig::json::Create&lt;Base&gt;(<span class="keyword">const</span> nlohmann::json &amp;); \</div>
 <div class="line">  <span class="keyword">template</span> <span class="keyword">struct </span>nlohmann::adl_serializer&lt;std::shared_ptr&lt;Base&gt;&gt;;                     \</div>
 <div class="line">  <span class="keyword">template</span> <span class="keyword">struct </span>nlohmann::adl_serializer&lt;std::unique_ptr&lt;Base&gt;&gt;</div>
-<div class="ttc" id="afactory_8hpp_html_a91f48a98fa790123a08f789e134f7893"><div class="ttname"><a href="factory_8hpp.html#a91f48a98fa790123a08f789e134f7893">EZ_FACTORY_DEFINE</a></div><div class="ttdeci">#define EZ_FACTORY_DEFINE(Base,...)</div><div class="ttdoc">Define a global factory instance.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00082">factory.hpp:82</a></div></div>
 </div><!-- fragment -->
 <p>Define a global json factory for a base class. </p>
 <p >Do this in the base class implementation file.</p>

@@ -118,7 +118,7 @@ $(function() {
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="json_8hpp.html#a4173449aa946066a5f70e5d214b10eae">   82</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="json_8hpp.html#a4173449aa946066a5f70e5d214b10eae">Add</a>(<span class="keyword">const</span> std::string &amp; tag)</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>{</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keyword">auto</span> creator = [](<span class="keyword">const</span> nlohmann::json &amp; json) { <span class="keywordflow">return</span> std::make_unique&lt;Derived&gt;(json.get&lt;Intermediate&gt;()); };</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <a class="code hl_define" href="factory_8hpp.html#a393029049d6394a87f55701320b788b2">EZ_FACTORY_INSTANCE</a>(Base, <span class="keyword">const</span> nlohmann::json &amp;).add(tag, std::move(creator));</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  EZ_FACTORY_INSTANCE(Base, <span class="keyword">const</span> nlohmann::json &amp;).add(tag, std::move(creator));</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Base&gt;</div>
@@ -127,7 +127,7 @@ $(function() {
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordflow">if</span> (!json.is_object() || json.size() != 1) {</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Expected dictionary of size 1 of format {tag: object}&quot;</span>);</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  }</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordflow">return</span> <a class="code hl_define" href="factory_8hpp.html#a393029049d6394a87f55701320b788b2">EZ_FACTORY_INSTANCE</a>(Base, <span class="keyword">const</span> nlohmann::json &amp;).create(json.begin().key(), json.begin().value());</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordflow">return</span> EZ_FACTORY_INSTANCE(Base, <span class="keyword">const</span> nlohmann::json &amp;).create(json.begin().key(), json.begin().value());</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}  <span class="comment">// namespace ezconfig::json</span></div>
@@ -144,7 +144,6 @@ $(function() {
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  ptr = ::ezconfig::json::Create&lt;Base&gt;(j);</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}</div>
 <div class="ttc" id="afactory_8hpp_html"><div class="ttname"><a href="factory_8hpp.html">factory.hpp</a></div><div class="ttdoc">Factory base class.</div></div>
-<div class="ttc" id="afactory_8hpp_html_a393029049d6394a87f55701320b788b2"><div class="ttname"><a href="factory_8hpp.html#a393029049d6394a87f55701320b788b2">EZ_FACTORY_INSTANCE</a></div><div class="ttdeci">#define EZ_FACTORY_INSTANCE(Base,...)</div><div class="ttdoc">Retrieve the global factory instance.</div><div class="ttdef"><b>Definition:</b> <a href="factory_8hpp_source.html#l00085">factory.hpp:85</a></div></div>
 <div class="ttc" id="ajson_8hpp_html_a1d5bfc9ccc6b391aa5c6b1cbc1bac7eb"><div class="ttname"><a href="json_8hpp.html#a1d5bfc9ccc6b391aa5c6b1cbc1bac7eb">ezconfig::json::Create</a></div><div class="ttdeci">std::unique_ptr&lt; Base &gt; Create(const nlohmann::json &amp;json)</div><div class="ttdoc">Create an object using the factory.</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l00089">json.hpp:89</a></div></div>
 <div class="ttc" id="ajson_8hpp_html_a4173449aa946066a5f70e5d214b10eae"><div class="ttname"><a href="json_8hpp.html#a4173449aa946066a5f70e5d214b10eae">ezconfig::json::Add</a></div><div class="ttdeci">void Add(const std::string &amp;tag)</div><div class="ttdoc">Add a factory method.</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l00082">json.hpp:82</a></div></div>
 <div class="ttc" id="ajson__fwd_8hpp_html"><div class="ttname"><a href="json__fwd_8hpp.html">json_fwd.hpp</a></div><div class="ttdoc">Json factory forward declarations.</div></div>

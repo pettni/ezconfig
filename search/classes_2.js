@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['factory_0',['Factory',['../classezconfig_1_1Factory.html',1,'ezconfig']]]
+  ['generalfactory_0',['GeneralFactory',['../classezconfig_1_1GeneralFactory.html',1,'ezconfig']]]
 ];
