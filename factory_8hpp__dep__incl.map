@@ -1,7 +1,13 @@
 <map id="include/ezconfig/factory.hpp" name="include/ezconfig/factory.hpp">
-<area shape="rect" id="node1" title="Factory base class." alt="" coords="101,5,282,31"/>
-<area shape="rect" id="node2" href="$json_8hpp.html" title="Json factory." alt="" coords="5,167,172,192"/>
-<area shape="rect" id="node3" href="$json__fwd_8hpp.html" title="Json factory forward declarations." alt="" coords="65,79,208,119"/>
-<area shape="rect" id="node4" href="$yaml_8hpp.html" title="Yaml factory." alt="" coords="209,167,379,192"/>
-<area shape="rect" id="node5" href="$yaml__fwd_8hpp.html" title="Yaml factory forward declarations." alt="" coords="284,79,429,119"/>
+<area shape="rect" id="Node000001" title="Factory base class." alt="" coords="147,5,328,31"/>
+<area shape="rect" id="Node000002" href="$json_8hpp.html" title="Json factory." alt="" coords="5,168,171,193"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,39,131,56,103,81,93,102,88,126,89,167,83,167,83,125,88,100,99,77,128,51,162,34"/>
+<area shape="rect" id="Node000003" href="$json__fwd_8hpp.html" title="Json factory forward declarations." alt="" coords="113,79,255,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="223,45,199,80,195,77,219,42"/>
+<area shape="rect" id="Node000004" href="$yaml_8hpp.html" title="Yaml factory." alt="" coords="262,168,431,193"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="256,43,341,166,336,169,252,46"/>
+<area shape="rect" id="Node000005" href="$yaml__fwd_8hpp.html" title="Yaml factory forward declarations." alt="" coords="329,79,474,120"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="277,36,362,76,359,81,275,40"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="150,132,104,169,101,165,147,127"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="381,134,357,169,353,166,377,131"/>
 </map>

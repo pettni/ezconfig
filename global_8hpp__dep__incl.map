@@ -1,8 +1,15 @@
 <map id="include/ezconfig/global.hpp" name="include/ezconfig/global.hpp">
-<area shape="rect" id="node1" title="Utilities to define and maintain a global instance." alt="" coords="103,5,279,31"/>
-<area shape="rect" id="node2" href="$factory_8hpp.html" title="Factory base class." alt="" coords="101,79,282,104"/>
-<area shape="rect" id="node3" href="$json_8hpp.html" title="Json factory." alt="" coords="5,240,172,265"/>
-<area shape="rect" id="node4" href="$json__fwd_8hpp.html" title="Json factory forward declarations." alt="" coords="65,152,208,192"/>
-<area shape="rect" id="node5" href="$yaml_8hpp.html" title="Yaml factory." alt="" coords="209,240,379,265"/>
-<area shape="rect" id="node6" href="$yaml__fwd_8hpp.html" title="Yaml factory forward declarations." alt="" coords="284,152,429,192"/>
+<area shape="rect" id="Node000001" title="Utilities to define and maintain a global instance." alt="" coords="150,5,325,31"/>
+<area shape="rect" id="Node000002" href="$factory_8hpp.html" title="Factory base class." alt="" coords="147,79,328,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="240,46,240,79,235,79,235,46"/>
+<area shape="rect" id="Node000003" href="$json_8hpp.html" title="Json factory." alt="" coords="5,241,171,267"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="164,113,131,130,103,154,93,176,88,199,89,241,83,241,83,199,88,174,99,151,128,125,162,108"/>
+<area shape="rect" id="Node000004" href="$json__fwd_8hpp.html" title="Json factory forward declarations." alt="" coords="113,153,255,193"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="223,119,199,154,195,151,219,116"/>
+<area shape="rect" id="Node000005" href="$yaml_8hpp.html" title="Yaml factory." alt="" coords="262,241,431,267"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="256,116,341,239,336,242,252,119"/>
+<area shape="rect" id="Node000006" href="$yaml__fwd_8hpp.html" title="Yaml factory forward declarations." alt="" coords="329,153,474,193"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="277,109,362,150,359,154,275,114"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="150,205,104,243,101,239,147,201"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="381,208,357,242,353,239,377,205"/>
 </map>

@@ -1,4 +1,5 @@
 <map id="include/ezconfig/json_fwd.hpp" name="include/ezconfig/json_fwd.hpp">
-<area shape="rect" id="node1" title="Json factory forward declarations." alt="" coords="17,5,160,45"/>
-<area shape="rect" id="node2" href="$json_8hpp.html" title="Json factory." alt="" coords="5,93,172,119"/>
+<area shape="rect" id="Node000001" title="Json factory forward declarations." alt="" coords="17,5,159,46"/>
+<area shape="rect" id="Node000002" href="$json_8hpp.html" title="Json factory." alt="" coords="5,94,171,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,62,91,93,85,93,85,62"/>
 </map>

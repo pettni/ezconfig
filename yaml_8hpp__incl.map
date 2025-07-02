@@ -1,12 +1,23 @@
 <map id="include/ezconfig/yaml.hpp" name="include/ezconfig/yaml.hpp">
-<area shape="rect" id="node1" title="Yaml factory." alt="" coords="110,5,279,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,79,120,104"/>
-<area shape="rect" id="node3" href="$factory_8hpp.html" title="Factory base class." alt="" coords="240,152,325,177"/>
-<area shape="rect" id="node9" href="$yaml__fwd_8hpp.html" title="Yaml factory forward declarations." alt="" coords="144,79,245,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="91,225,170,251"/>
-<area shape="rect" id="node5" title=" " alt="" coords="194,225,241,251"/>
-<area shape="rect" id="node6" title=" " alt="" coords="265,225,333,251"/>
-<area shape="rect" id="node7" title=" " alt="" coords="357,225,427,251"/>
-<area shape="rect" id="node8" href="$global_8hpp.html" title="Utilities to define and maintain a global instance." alt="" coords="451,225,531,251"/>
-<area shape="rect" id="node10" href="$macro_8hpp_source.html" title=" " alt="" coords="119,152,201,177"/>
+<area shape="rect" id="Node000001" title="Yaml factory." alt="" coords="110,5,279,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,120,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,34,99,74,97,69,171,29"/>
+<area shape="rect" id="Node000003" href="$factory_8hpp.html" title="Factory base class." alt="" coords="240,153,325,178"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,29,237,50,259,78,273,107,281,137,276,138,268,109,255,80,233,54,209,33"/>
+<area shape="rect" id="Node000009" href="$yaml__fwd_8hpp.html" title="Yaml factory forward declarations." alt="" coords="144,79,245,105"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="197,31,197,63,192,63,192,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="93,226,170,252"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="258,181,172,222,170,217,256,176"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="194,226,240,252"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="274,180,240,217,236,213,270,177"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="265,226,332,252"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="288,178,295,210,290,211,283,179"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="356,226,425,252"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="302,177,361,215,358,220,299,181"/>
+<area shape="rect" id="Node000008" href="$global_8hpp.html" title="Utilities to define and maintain a global instance." alt="" coords="448,226,528,252"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="318,176,440,218,438,223,316,181"/>
+<area shape="poly" id="edge9_Node000009_Node000003" title=" " alt="" coords="211,103,258,141,254,145,208,107"/>
+<area shape="rect" id="Node000010" href="$macro_8hpp_source.html" title=" " alt="" coords="120,153,202,178"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="191,106,176,140,171,137,187,104"/>
+<area shape="poly" id="edge11_Node000010_Node000004" title=" " alt="" coords="159,180,145,213,140,211,154,178"/>
 </map>
